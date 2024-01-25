@@ -1,0 +1,5 @@
+run the following line to compile
+
+nvcc -arch=sm_20 ad_search-ms.cu -o test -DNBLOCK=1 -DSIZE=10000 -DSIZE_S2=100 -DPAR -lcudart -DTHREADS=512
+
+
