@@ -1,0 +1,126 @@
+CPP=g++
+OBJ=src/Cooperation.o src/adaptnovelty.o src/algorithms.o src/derandomized.o src/ddfw.o src/g2wsat.o src/gsat.o src/gsat-tabu.o src/gwsat.o src/hsat.o src/hwsat.o src/irots.o src/mt19937p.o src/mylocal.o src/novelty.o src/novelty+p.o src/parameters.o src/paws.o src/random.o src/reports.o src/rgsat.o src/rnovelty.o src/rots.o src/samd.o src/saps.o src/ubcsat.o src/ubcsat-help.o src/ubcsat-internal.o src/ubcsat-io.o src/ubcsat-mem.o src/ubcsat-reports.o src/ubcsat-time.o src/ubcsat-triggers.o src/vw.o src/walksat.o src/walksat-tabu.o
+LINKOBJ=src/Cooperation.o src/adaptnovelty.o src/algorithms.o src/derandomized.o src/ddfw.o src/g2wsat.o src/gsat.o src/gsat-tabu.o src/gwsat.o src/hsat.o src/hwsat.o src/irots.o src/mt19937p.o src/mylocal.o src/novelty.o src/novelty+p.o src/parameters.o src/paws.o src/random.o src/reports.o src/rgsat.o src/rnovelty.o src/rots.o src/samd.o src/saps.o src/ubcsat.o src/ubcsat-help.o src/ubcsat-internal.o src/ubcsat-io.o src/ubcsat-mem.o src/ubcsat-reports.o src/ubcsat-time.o src/ubcsat-triggers.o src/vw.o src/walksat.o src/walksat-tabu.o
+BIN=libubcsat.a
+#OUTPUT=
+#version=RESTART_PROB
+
+CXXFLAGS=-D$(version) -static -lm -finline-functions -fopenmp -Wno-write-strings -O3
+
+all: $(BIN)
+
+clean:
+	rm -rf ${OBJ} $(BIN) $(OUTPUT)
+
+$(BIN): $(LINKOBJ)
+	ar r $(BIN) $(LINKOBJ)
+	g++ src/ubcsat.c -o $(OUTPUT)  $(CXXFLAGS) -L. -lubcsat -lstdc++ -lm
+	#randlib $(BIN)
+
+src/Cooperation.o: src/Cooperation.cpp
+	$(CPP) -c src/Cooperation.cpp -o src/Cooperation.o $(CXXFLAGS)
+
+src/adaptnovelty.o: src/adaptnovelty.c
+	$(CPP) -c src/adaptnovelty.c -o src/adaptnovelty.o $(CXXFLAGS)
+
+src/algorithms.o: src/algorithms.c
+	$(CPP) -c src/algorithms.c -o src/algorithms.o $(CXXFLAGS)
+
+src/ddfw.o: src/ddfw.c
+	$(CPP) -c src/ddfw.c -o src/ddfw.o $(CXXFLAGS)
+
+src/derandomized.o: src/derandomized.c
+	$(CPP) -c src/derandomized.c -o src/derandomized.o $(CXXFLAGS)
+
+src/g2wsat.o: src/g2wsat.c
+	$(CPP) -c src/g2wsat.c -o src/g2wsat.o $(CXXFLAGS)
+
+src/gsat.o: src/gsat.c
+	$(CPP) -c src/gsat.c -o src/gsat.o $(CXXFLAGS)
+
+src/gsat-tabu.o: src/gsat-tabu.c
+	$(CPP) -c src/gsat-tabu.c -o src/gsat-tabu.o $(CXXFLAGS)
+
+src/gwsat.o: src/gwsat.c
+	$(CPP) -c src/gwsat.c -o src/gwsat.o $(CXXFLAGS)
+
+src/hsat.o: src/hsat.c
+	$(CPP) -c src/hsat.c -o src/hsat.o $(CXXFLAGS)
+
+src/hwsat.o: src/hwsat.c
+	$(CPP) -c src/hwsat.c -o src/hwsat.o $(CXXFLAGS)
+
+src/irots.o: src/irots.c
+	$(CPP) -c src/irots.c -o src/irots.o $(CXXFLAGS)
+
+src/mt19937p.o: src/mt19937p.c
+	$(CPP) -c src/mt19937p.c -o src/mt19937p.o $(CXXFLAGS)
+
+src/mylocal.o: src/mylocal.c
+	$(CPP) -c src/mylocal.c -o src/mylocal.o $(CXXFLAGS)
+
+src/novelty.o: src/novelty.c
+	$(CPP) -c src/novelty.c -o src/novelty.o $(CXXFLAGS)
+
+src/novelty+p.o: src/novelty+p.c
+	$(CPP) -c src/novelty+p.c -o src/novelty+p.o $(CXXFLAGS)
+
+src/parameters.o: src/parameters.c
+	$(CPP) -c src/parameters.c -o src/parameters.o $(CXXFLAGS)
+
+src/paws.o: src/paws.c
+	$(CPP) -c src/paws.c -o src/paws.o $(CXXFLAGS)
+
+src/random.o: src/random.c
+	$(CPP) -c src/random.c -o src/random.o $(CXXFLAGS)
+
+src/reports.o: src/reports.c
+	$(CPP) -c src/reports.c -o src/reports.o $(CXXFLAGS)
+
+src/rgsat.o: src/rgsat.c
+	$(CPP) -c src/rgsat.c -o src/rgsat.o $(CXXFLAGS)
+
+src/rnovelty.o: src/rnovelty.c
+	$(CPP) -c src/rnovelty.c -o src/rnovelty.o $(CXXFLAGS)
+
+src/rots.o: src/rots.c
+	$(CPP) -c src/rots.c -o src/rots.o $(CXXFLAGS)
+
+src/samd.o: src/samd.c
+	$(CPP) -c src/samd.c -o src/samd.o $(CXXFLAGS)
+
+src/saps.o: src/saps.c
+	$(CPP) -c src/saps.c -o src/saps.o $(CXXFLAGS)
+
+src/ubcsat.o: src/ubcsat.c
+	$(CPP) -c src/ubcsat.c -o src/ubcsat.o $(CXXFLAGS)
+
+src/ubcsat-help.o: src/ubcsat-help.c
+	$(CPP) -c src/ubcsat-help.c -o src/ubcsat-help.o $(CXXFLAGS)
+
+src/ubcsat-internal.o: src/ubcsat-internal.c
+	$(CPP) -c src/ubcsat-internal.c -o src/ubcsat-internal.o $(CXXFLAGS)
+
+src/ubcsat-io.o: src/ubcsat-io.c
+	$(CPP) -c src/ubcsat-io.c -o src/ubcsat-io.o $(CXXFLAGS)
+
+src/ubcsat-mem.o: src/ubcsat-mem.c
+	$(CPP) -c src/ubcsat-mem.c -o src/ubcsat-mem.o $(CXXFLAGS)
+
+src/ubcsat-reports.o: src/ubcsat-reports.c
+	$(CPP) -c src/ubcsat-reports.c -o src/ubcsat-reports.o $(CXXFLAGS)
+
+src/ubcsat-time.o: src/ubcsat-time.c
+	$(CPP) -c src/ubcsat-time.c -o src/ubcsat-time.o $(CXXFLAGS)
+
+src/ubcsat-triggers.o: src/ubcsat-triggers.c
+	$(CPP) -c src/ubcsat-triggers.c -o src/ubcsat-triggers.o $(CXXFLAGS)
+
+src/vw.o: src/vw.c
+	$(CPP) -c src/vw.c -o src/vw.o $(CXXFLAGS)
+
+src/walksat.o: src/walksat.c
+	$(CPP) -c src/walksat.c -o src/walksat.o $(CXXFLAGS)
+
+src/walksat-tabu.o: src/walksat-tabu.c
+	$(CPP) -c src/walksat-tabu.c -o src/walksat-tabu.o $(CXXFLAGS)

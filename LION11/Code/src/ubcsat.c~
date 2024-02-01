@@ -1,0 +1,324 @@
+/*
+
+      ##  ##  #####    #####   $$$$$   $$$$   $$$$$$    
+      ##  ##  ##  ##  ##      $$      $$  $$    $$      
+      ##  ##  #####   ##       $$$$   $$$$$$    $$      
+      ##  ##  ##  ##  ##          $$  $$  $$    $$      
+       ####   #####    #####  $$$$$   $$  $$    $$      
+  ======================================================
+  SLS SAT Solver from The University of British Columbia
+  ======================================================
+  ...Developed by Dave Tompkins (davet [@] cs.ubc.ca)...
+  ------------------------------------------------------
+  .......consult legal.txt for legal information........
+  ......consult revisions.txt for revision history......
+  ------------------------------------------------------
+  ... project website: http://www.satlib.org/ubcsat ....
+  ------------------------------------------------------
+  .....e-mail ubcsat-help [@] cs.ubc.ca for support.....
+  ------------------------------------------------------
+
+*/
+
+#include "ubcsat.h"
+
+#include "Cooperation.h"
+#include <omp.h>
+#include <signal.h>
+
+const char sVersion[] = "1.1.0 (Sea to Sky Release)";
+
+bool Ubcsat::Solve(int argc, char *argv[], Cooperation *coop) {
+
+  //InitSeed(iSeed);
+
+  SetupUBCSAT();
+
+  AddAlgorithms();
+  AddParameters();
+  AddReports();
+  AddDataTriggers();
+  AddReportTriggers();
+
+  AddLocal();
+  
+  ParseAllParameters(argc,argv);
+
+  ActivateAlgorithmTriggers();
+  ActivateReportTriggers();
+
+  RandomSeed(iSeed);
+
+  RunProceduresALEJOclass(PostParameters,this);
+
+  RunProceduresALEJOclass(ReadInInstance,this);
+
+  RunProceduresALEJOclass(PostRead,this);
+
+  RunProceduresALEJOclass(CreateData,this);
+  RunProceduresALEJOclass(CreateStateInfo,this);
+
+//parallel
+//  int tVars[3]={1,2,3};
+//  sVars(tVars,2);
+
+  iRun = 0;
+  iNumSolutionsFound = 0;
+  bTerminateAllRuns = FALSE;
+
+  RunProceduresALEJOclass(PreStart,this);
+
+  StartTotalClock();
+
+  while ( (!coop->End) && (iRun < iNumRuns) && (! bTerminateAllRuns)) {
+
+    iRun++;
+
+    iStep = 0;
+    bSolutionFound = FALSE;
+    bTerminateRun = FALSE;
+    bRestart = TRUE;
+
+    RunProceduresALEJOclass(PreRun,this);
+
+    //StartRunClock();
+    
+    while ((!coop->End) && (iStep < iCutoff) && (! bSolutionFound) && (! bTerminateRun)) {
+
+      iStep++;
+      iFlipCandidate = 0;
+
+      RunProceduresALEJOclass(PreStep,this);
+      RunProceduresALEJOclass(CheckRestart,this);
+
+	  if(bRestart && iStep!=1) {
+		//valid restart =>  at least one of the available cores (but not me) improved its own solution
+		bRestart=FALSE;
+		for(int i=0;i<coop->nThreads;i++)
+			if(coop->BestImp[idThread][i] && i != idThread) bRestart=true;
+	  }
+
+      if (bRestart) {
+		//std::cout<<"restart. "<<iStep<<std::endl;
+        RunProceduresALEJOclass(PreInit,this);
+/*computing parallel information*/
+		//creating the first random assignement... after that using shared information.
+		if(iStep == 1) {
+			RunProceduresALEJOclass(InitData,this);
+		}
+		else {
+			//if(idThread==omp_get_thread_num()) coop->addHammingDistance();
+			coop->RestartBest(idThread);
+			iNumRestarts++;
+		}
+/*ending*/
+        RunProceduresALEJOclass(InitStateInfo,this);
+        RunProceduresALEJOclass(PostInit,this);
+        bRestart = FALSE;
+      } else {
+        RunProceduresALEJOclass(ChooseCandidate,this);
+        RunProceduresALEJOclass(PreFlip,this);
+        RunProceduresALEJOclass(FlipCandidate,this);
+        RunProceduresALEJOclass(UpdateStateInfo,this);
+        RunProceduresALEJOclass(PostFlip,this);
+      }
+      
+      RunProceduresALEJOclass(PostStep,this);
+	  
+/*computing parallel information*/
+	  coop->UpdateStep(idThread);
+/*ending*/
+
+      RunProceduresALEJOclass(StepCalculations,this);
+
+      RunProceduresALEJOclass(CheckTerminate,this);
+    }	
+
+    //StopRunClock();
+
+    RunProceduresALEJOclass(RunCalculations,this);
+    
+    RunProceduresALEJOclass(PostRun,this);
+
+    if (bSolutionFound) {
+#pragma omp critical (accessToEnd)
+	  {
+		if(!coop->End) {
+			coop->End=true;
+			coop->winnerThread=idThread;
+		}
+	  }
+      iNumSolutionsFound++;
+      if (iNumSolutionsFound == iFind) {
+        bTerminateAllRuns = TRUE;
+      }
+    }
+  }
+
+  StopTotalClock();
+
+	if(coop->winnerThread == idThread) {
+		//std::cout<<"printing thread: "<<omp_get_thread_num()<<std::endl;
+		RunProceduresALEJOclass(FinalCalculations,this);
+		///RunProceduresALEJOclass(FinalReports,this);
+		//std::cout<<"ending thread: "<<omp_get_thread_num()<<std::endl;
+		CleanExit();
+	}
+	else {
+		FreeRAM();
+	}
+  //std::cout<<"BEST found: "<<coop->iBestNumFalse[idThread]<<std::endl;
+  //coop->PrintBest(idThread);
+	
+  return bSolutionFound;
+}
+
+
+#ifndef ALTERNATEMAIN
+
+UINT32 getNewSeed(struct mt19937p *mt) {
+UINT32 newSeed;
+#pragma omp critical
+{
+	newSeed = genrand(mt);
+}
+	return newSeed;
+}
+
+Cooperation *cinfo;
+int ncores;
+void exitInfo(int signum) {
+	std::cout<<"s UNKNOWN"<<std::endl;
+	for(int i=0;i<ncores;i++) {
+		std::cout<<"c Min false clauses Core["<<i<<"]: "<<cinfo->iBestNumFalse[i]<<std::endl;
+	}
+	exit(0);
+	//return;
+}
+
+int main2(int argc, char *argv[]) {
+	int n=atoi(argv[1]);
+	Cooperation c(n);
+	cinfo=&c;
+	ncores=n;
+	signal(SIGTERM, exitInfo);
+	omp_set_num_threads(n);
+	char *pAlg[8]={"paws","g2wsat+p","adaptg2wsat","adaptg2wsat+p","g2wsat","saps","rsaps","adaptnovelty+"};
+	int nTotalPar=argc-1;
+	char **gInfo=new char*[nTotalPar];
+	char pSeed[]="-seed";
+	for(int i=0,j=0;i<argc;i++) {
+		if(strcmp(argv[i],pSeed) == 0) {
+			c.InitSeed(atoi(argv[i+1]));
+		}
+		if(i!=1) { 
+			gInfo[j]=argv[i];
+			j++;
+		}
+	}
+	if(c.globalSeed==-1) {
+		InitSeed(c.globalSeed);
+		c.InitSeed(c.globalSeed);
+	}
+        UINT32 lSeeds[n];
+        for(int i=0;i<=n;i++) {
+                lSeeds[i]=getNewSeed(&c.mt);
+        }
+
+	StartRunClock();
+#pragma omp parallel
+	{
+		int cThread=omp_get_thread_num();
+		char *pPar[nTotalPar];
+		c.Solver[cThread].iSeed=lSeeds[cThread];
+		for(int i=0;i<nTotalPar;i++) {
+			char ptest[]="-alg";
+			if(strcmp(gInfo[i],ptest) == 0) {
+				//std::cout<<"parameter found ... "<<argv[i+1]<<std::endl;
+				pPar[i]=gInfo[i]; pPar[i+1]=pAlg[cThread];
+				i++;
+			}
+			else if(strcmp(gInfo[i],pSeed) == 0) {
+				char tmpSeed[100];
+				sprintf(tmpSeed,"%d",c.Solver[cThread].iSeed);
+				pPar[i]=gInfo[i]; pPar[i+1]=tmpSeed;
+				i++;
+			}
+			else pPar[i]=gInfo[i];
+			////std::cout<<"par["<<i<<"]: "<<pPar[i]<<std::endl;
+		}
+		c.Solver[cThread].idThread=cThread;
+		c.Solver[cThread].write=&c.write[cThread];
+		c.Solver[cThread].read=&c.read;
+		//c.Solver[cThread].iSeed=getNewSeed(&c.mt);
+		//c.Solver[cThread].iSeed=1;
+		//c.Solver[cThread].Solve(argc,argv,&c);
+		c.Solver[cThread].Solve(nTotalPar,pPar,&c);
+	}
+StopRunClock();
+	//std::cout<<"Time: "<<fTotalTime<<std::endl;
+	bool solved=false;
+	for(int i=0;i<n;i++) {
+		if(c.iBestNumFalse[i] == 0) solved=true;
+		/*std::cout<<"BEST found ID: "<<i<<" fitness: "<<c.iBestNumFalse[i]<<std::endl;
+		std::cout<<"seed: "<<c.Solver[i].iSeed<<std::endl;
+		std::cout<<"Flips: "<<c.Solver[i].iStep<<std::endl;
+		std::cout<<"Restarts: "<<c.Solver[i].iNumRestarts<<std::endl;
+		c.PrintBest(i);	
+		std::cout<<"END BEST"<<std::endl;*/
+	}/*
+	std::cout<<"Solved: "<<(solved?"Yes":"NO")<<std::endl;
+	std::cout<<"Total cores: "<<n<<std::endl;
+	c.printHammingDistanceStats();
+	std::cout<<"Hamming distanceInfo: ";
+	int htotal=0;
+	double tele=0.0;
+	for(std::vector<double>::iterator it=c.HammingDis.begin();it!=c.HammingDis.end();it++)
+		{ std::cout<<(*it)<<" "; htotal+=(*it); tele++; }
+	std::cout<<std::endl;
+	std::cout<<"HamAVG: "<<(static_cast<double>(htotal)/tele)<<std::endl;
+	std::cout<<"========="<<std::endl;*/
+	c.PrintSol();
+	///c.nThreads=8;
+	///c.SetFixedVariables(std::vector<int>());
+  return 0;
+ //return(ubcsatmain(argc,argv,i));
+}
+
+//only need to check how to remove all the printf listed for each individual solver....
+//It's sooo important to check the input seed number, this number should be an interger seed_i such that 0<seed_i<Max_int(32 bits).... otherwise the solver might crash...
+int main(int argc, char *argv[]) {
+	//std::cout<<argv[0]<<std::endl;
+	//std::cout<<argv[1]<<" -- "<<argv[2]<<" -- "<<argv[3]<<std::endl;
+		char *pmaxcores="-maxcores";
+		int initPar=1; int maxcores=8;
+
+		if ( strcmp(pmaxcores,argv[1]) == 0 ) {
+			maxcores=atoi(argv[2]);
+			initPar=3;
+		}
+		char pseed[100], pcores[100];
+		char *inputFile=argv[initPar]; initPar++;
+		int mncores=atoi(argv[initPar]); initPar++;
+		int nseed=atoi(argv[initPar]); initPar++;
+		sprintf(pseed,"%d",(nseed<=0?1:nseed));
+		sprintf(pcores,"%d",(mncores>maxcores?maxcores:mncores));
+		std::cout<<"c Input seed "<<nseed<<" used seed: "<<pseed<<std::endl;
+		//char *pseed=argv[3]; char *inputFile=argv[1]; char *pcores=argv[2];
+                int time=1000;
+                int cores=0;
+                char *pargv[] = {"ubcsat",
+                                 pcores,"-alg","coop-ubcsat","-i",inputFile,
+                                 "-cutoff","max", "-srestart","1000000",
+                                 "-seed",pseed,
+                                 "-solve",
+				 "-r", "out", "null", "-r", "stats", "null"
+                                };
+                int tparam=19;
+		return main2(tparam,pargv);
+		//return ubcsatMain(tparam, pargv);
+                //return 1;
+}
+
+#endif
+

@@ -1,0 +1,341 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/adaptive/!svn/ver/2048/SAT/Code/ubcsat-1-1-0-1/src
+END
+gsat.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/gsat.c
+END
+irots.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/irots.c
+END
+ubcsat-internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/ubcsat-internal.h
+END
+ubcsat-triggers.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/adaptive/!svn/ver/2031/SAT/Code/ubcsat-1-1-0-1/src/ubcsat-triggers.c
+END
+g2wsat.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/g2wsat.c
+END
+ubcsat-help.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/ubcsat-help.c
+END
+example-mt.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/example-mt.c
+END
+ubcsat-triggers.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/ubcsat-triggers.h
+END
+qsort.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/adaptive/!svn/ver/1995/SAT/Code/ubcsat-1-1-0-1/src/qsort.cc
+END
+ubcsat-reports.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/ubcsat-reports.c
+END
+rnovelty.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/rnovelty.c
+END
+ubcsat-limits.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/ubcsat-limits.h
+END
+ubcsat-io.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/adaptive/!svn/ver/2004/SAT/Code/ubcsat-1-1-0-1/src/ubcsat-io.c
+END
+rots.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/rots.c
+END
+Cooperation.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/adaptive/!svn/ver/2126/SAT/Code/ubcsat-1-1-0-1/src/Cooperation.h
+END
+ubcsat-io.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/ubcsat-io.h
+END
+novelty+p.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/novelty+p.c
+END
+ubcsat-mem.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/ubcsat-mem.c
+END
+reports.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/reports.c
+END
+walksat-tabu.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/walksat-tabu.c
+END
+ubcsat-vars.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/adaptive/!svn/ver/2031/SAT/Code/ubcsat-1-1-0-1/src/ubcsat-vars.h
+END
+hsat.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/hsat.c
+END
+mylocal.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/mylocal.c
+END
+novelty.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/novelty.c
+END
+ubcsat-mem.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/ubcsat-mem.h
+END
+parameters.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/parameters.c
+END
+reports.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/reports.h
+END
+derandomized.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/derandomized.c
+END
+mylocal.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/mylocal.h
+END
+walksat.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/walksat.c
+END
+saps.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/saps.c
+END
+ubcsat-globals.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/ubcsat-globals.h
+END
+algorithms.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/algorithms.c
+END
+paws.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/paws.c
+END
+adaptnovelty.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/adaptnovelty.c
+END
+ubcsat-lit.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/adaptive/!svn/ver/2004/SAT/Code/ubcsat-1-1-0-1/src/ubcsat-lit.h
+END
+mt19937p.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/mt19937p.c
+END
+ubcsat-time.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/adaptive/!svn/ver/2012/SAT/Code/ubcsat-1-1-0-1/src/ubcsat-time.c
+END
+algorithms.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/algorithms.h
+END
+rgsat.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/rgsat.c
+END
+random.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/random.c
+END
+mt19937ar.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/mt19937ar.c
+END
+mt19937p.tar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/mt19937p.tar
+END
+ubcsat.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/adaptive/!svn/ver/2126/SAT/Code/ubcsat-1-1-0-1/src/ubcsat.c
+END
+mt19937p.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/mt19937p.h
+END
+Cooperation.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/adaptive/!svn/ver/2126/SAT/Code/ubcsat-1-1-0-1/src/Cooperation.cpp
+END
+ubcsat-time.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/ubcsat-time.h
+END
+ddfw.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/ddfw.c
+END
+samd.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/samd.c
+END
+gwsat.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/gwsat.c
+END
+hwsat.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/hwsat.c
+END
+ubcsat.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/adaptive/!svn/ver/2004/SAT/Code/ubcsat-1-1-0-1/src/ubcsat.h
+END
+gsat-tabu.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/gsat-tabu.c
+END
+ubcsat-types.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/adaptive/!svn/ver/2006/SAT/Code/ubcsat-1-1-0-1/src/ubcsat-types.h
+END
+ubcsat-internal.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/adaptive/!svn/ver/1995/SAT/Code/ubcsat-1-1-0-1/src/ubcsat-internal.c
+END
+vw.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/adaptive/!svn/ver/1977/SAT/Code/ubcsat-1-1-0-1/src/vw.c
+END

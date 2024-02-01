@@ -1,0 +1,659 @@
+
+#include "Cooperation.h"
+#include <assert.h>
+#include <omp.h>
+
+Cooperation::Cooperation(int _nThreads) {
+	nThreads=_nThreads;
+	Solver = new Ubcsat [nThreads];
+	End = false;
+	winnerThread=-1;
+	globalSeed=-1;
+	//InitSeed(globalSeed);
+	//sgenrand(globalSeed, &mt);
+	//sharing
+	initVars = new BOOL[nThreads];
+	aBestVarValue = new UINT32*[nThreads];
+	iBestNumFalse = new UINT32[nThreads];
+	isLocalMinimum = new BOOL[nThreads];
+	bestScore = new SINT32*[nThreads];
+	FlipCount = new UINT32*[nThreads];
+	MaxFlips = new UINT32[nThreads];
+	BestImp = new BOOL*[nThreads];
+
+	for(int i=0;i<=nThreads;i++) { 
+		BestImp[i]=new BOOL[nThreads];
+		for(int j=0;j<=nThreads;j++) 
+			BestImp[i][j]=false;
+	}
+
+	write = new omp_lock_t[nThreads];
+	omp_init_lock(&read);
+	for(int i=0;i<nThreads;i++) {
+		initVars[i]=false;
+		omp_init_lock(&write[i]);
+		MaxFlips[i]=0;
+	}
+}
+
+Cooperation::~Cooperation(void) {
+	omp_destroy_lock(&read);
+	for(int i=0;i<nThreads;i++)
+		omp_destroy_lock(&write[i]);
+}
+
+/*
+void Cooperation::RestartBest(int threadID) {
+		std::cout<<"RestartBest: "<<threadID<<std::endl;
+        omp_set_lock(&read);
+        for(int i=0;i<nThreads;i++) {
+                omp_set_lock(&write[i]);
+        }
+
+        int numVars=Solver[threadID].iNumVars;
+		
+		for(int i=1;i<=numVars;i++) {
+			if(!initVars[i]) continue;
+			int ones=0,zeros=0;
+			for(int j=0;j<nThreads;j++) {
+				if(bestScore[j][i]>0) {
+					if(iBestNumFalse[i]==1) ones++;
+					else zeros++;
+				}
+			}
+			if(ones>zeros) Solver[threadID].aVarValue[i]=1;
+			else if(zeros>ones) Solver[threadID].aVarValue[i]=0;
+			else Solver[threadID].aVarValue[i]=Solver[threadID].RandomInt(2);
+		}
+
+        for(int i=0;i<nThreads;i++) {
+                omp_unset_lock(&write[i]);
+        }
+        omp_unset_lock(&read);
+
+}
+*/
+
+
+#ifdef RESTART_PRANK
+
+//Resting using Averaging best known solutions
+void Cooperation::RestartBest(int threadID) {
+		//std::cout<<"RestartBest: "<<threadID<<std::endl;
+        //omp_set_lock(&read);
+		int orderFit[nThreads];
+        for(int i=0;i<nThreads;i++) {
+                omp_set_lock(&write[i]);
+				BestImp[threadID][i]=false;
+				orderFit[i]=i;
+        }
+
+        int numVars=Solver[threadID].iNumVars;
+		
+		//sorting and assigning weights
+		//applying a simple bubble sort algorithm
+		int n=nThreads-1;
+		for(int i=0;i<n;i++) {
+			for(int j=n;j>i;j--) {
+				if(  iBestNumFalse[orderFit[j-1]] > iBestNumFalse[orderFit[j]] ) {
+					std::swap(orderFit[j-1], orderFit[j]);
+				}
+			}
+		}
+		
+		//Best alg=nThreads, 2nd best=nThreads-1, 3rd best=nThreads-2, ..., worse=1
+		int W[nThreads];
+		for(int i=0;i<nThreads;i++) {
+			W[orderFit[i]]=nThreads-i;
+		}
+		
+
+		if(initVars[threadID]) {
+			for(int i=1;i<=numVars;i++) {
+				//double prob=Solver[threadID].FloatToProb(0.3);
+				//if(Solver[threadID].RandomProb(prob)) { continue; }
+				int ones=0,zeros=0;
+				//voting with ranks values
+				for(int j=0;j<nThreads;j++) {
+					if(!initVars[j]) continue;
+					if(aBestVarValue[j][i]==1) ones+=W[j];
+					else zeros+=W[j];
+				}
+				//if(ones>zeros) Solver[threadID].aVarValue[i]=1;
+				//else if(zeros>ones) Solver[threadID].aVarValue[i]=0;
+				//else Solver[threadID].aVarValue[i]=Solver[threadID].RandomInt(2);
+				double probOne=Solver[threadID].FloatToProb(static_cast<double>(ones)/static_cast<double>(ones+zeros));
+				if(Solver[threadID].RandomProb(probOne)) Solver[threadID].aVarValue[i]=1;
+				else Solver[threadID].aVarValue[i]=0;
+			}
+		}
+        for(int i=0;i<nThreads;i++) {
+			omp_unset_lock(&write[i]);
+        }
+        //omp_unset_lock(&read);
+}
+
+#endif
+
+#ifdef RESTART_PNormW
+//Resting using voting
+void Cooperation::RestartBest(int threadID) {
+		//std::cout<<"RestartBest: "<<threadID<<std::endl;
+        ///omp_set_lock(&read);
+        for(int i=0;i<nThreads;i++) {
+                omp_set_lock(&write[i]);
+				BestImp[threadID][i]=false;
+        }
+
+        int numVars=Solver[threadID].iNumVars;
+		double W[nThreads];
+
+		double numClauses=static_cast<double>(Solver[threadID].iNumClauses);
+		for(int i=0;i<nThreads;i++) {
+			W[i]=(numClauses - static_cast<double>(iBestNumFalse[i]))/numClauses;
+			//W[i]=W[i]*W[i];
+		}
+
+		if(initVars[threadID]) {
+			for(int i=1;i<=numVars;i++) {
+				//double prob=Solver[threadID].FloatToProb(0.3);
+				//if(Solver[threadID].RandomProb(prob)) { continue; }
+				double ones=0,zeros=0;
+				//voting weigthing using fitness function
+				for(int j=0;j<nThreads;j++) {
+					if(!initVars[j]) continue;
+					if(aBestVarValue[j][i]==1) ones+=W[j];
+					else zeros+=W[j];
+				}
+				//if(ones>zeros) Solver[threadID].aVarValue[i]=1;
+				//else if(zeros>ones) Solver[threadID].aVarValue[i]=0;
+				//else Solver[threadID].aVarValue[i]=Solver[threadID].RandomInt(2);
+				double probOne=Solver[threadID].FloatToProb(static_cast<double>(ones)/static_cast<double>(ones+zeros));
+				if(Solver[threadID].RandomProb(probOne)) Solver[threadID].aVarValue[i]=1;
+				else Solver[threadID].aVarValue[i]=0;
+			}
+		}
+        for(int i=0;i<nThreads;i++) {
+			omp_unset_lock(&write[i]);
+        }
+        //omp_unset_lock(&read);
+}
+
+#endif
+
+#ifdef RESTART_RANK
+
+//Resting using Averaging best known solutions
+void Cooperation::RestartBest(int threadID) {
+		//std::cout<<"RestartBest: "<<threadID<<std::endl;
+        //omp_set_lock(&read);
+		int orderFit[nThreads];
+        for(int i=0;i<nThreads;i++) {
+                omp_set_lock(&write[i]);
+				BestImp[threadID][i]=false;
+				orderFit[i]=i;
+        }
+
+        int numVars=Solver[threadID].iNumVars;
+		
+		//sorting and assigning weights
+		//applying a simple bubble sort algorithm
+		int n=nThreads-1;
+		for(int i=0;i<n;i++) {
+			for(int j=n;j>i;j--) {
+				if(  iBestNumFalse[orderFit[j-1]] > iBestNumFalse[orderFit[j]] ) {
+					std::swap(orderFit[j-1], orderFit[j]);
+				}
+			}
+		}
+		
+		int W[nThreads];
+		for(int i=0;i<nThreads;i++) {
+			W[orderFit[i]]=nThreads-i;
+		}
+		
+
+		if(initVars[threadID]) {
+		for(int i=1;i<=numVars;i++) {
+			//double prob=Solver[threadID].FloatToProb(0.3);
+			//if(Solver[threadID].RandomProb(prob)) { continue; }
+			int ones=0,zeros=0;
+			//voting with ranks values
+			for(int j=0;j<nThreads;j++) {
+				if(!initVars[j]) continue;
+				if(aBestVarValue[j][i]==1) ones+=W[j];
+				else zeros+=W[j];
+			}
+			if(ones>zeros) Solver[threadID].aVarValue[i]=1;
+			else if(zeros>ones) Solver[threadID].aVarValue[i]=0;
+			else Solver[threadID].aVarValue[i]=Solver[threadID].RandomInt(2);
+		}
+		}
+        for(int i=0;i<nThreads;i++) {
+			omp_unset_lock(&write[i]);
+        }
+        //omp_unset_lock(&read);
+}
+
+#endif
+
+#ifdef RESTART_BEST
+//Restarting using always best Fitness value
+void Cooperation::RestartBest(int threadID) {
+        omp_set_lock(&read);
+        for(int i=0;i<nThreads;i++) {
+                omp_set_lock(&write[i]);
+				BestImp[threadID][i]=false;
+        }
+        int numVars=Solver[threadID].iNumVars;
+		
+		UINT32 *VarBest=NULL;
+		UINT32 BestFitness=10000000;
+		for(int i=0;i<nThreads;i++) {
+			if(!initVars[i]) continue;
+			if(BestFitness > iBestNumFalse[i]) {
+				BestFitness=iBestNumFalse[i];
+				VarBest=aBestVarValue[i];
+			}
+		}
+		if(initVars[threadID]) {
+			for(int i=1;i<=numVars;i++) {
+				Solver[threadID].aVarValue[i]=VarBest[i];
+			}
+		}
+        for(int i=0;i<nThreads;i++) {
+			omp_unset_lock(&write[i]);
+        }
+        omp_unset_lock(&read);
+}
+#endif
+
+#ifdef RESTART_PROB
+//Fix variables that agree, take others at random biased towards the majority
+void Cooperation::RestartBest(int threadID) {
+		//std::cout<<"RestartBest: "<<threadID<<std::endl;
+        //omp_set_lock(&read);
+		int orderFit[nThreads];
+        for(int i=0;i<nThreads;i++) {
+                omp_set_lock(&write[i]);
+				BestImp[threadID][i]=false;
+				orderFit[i]=i;
+        }
+
+        int numVars=Solver[threadID].iNumVars;
+
+		if(initVars[threadID]) {
+			for(int i=1;i<=numVars;i++) {
+				//double prob=Solver[threadID].FloatToProb(0.3);
+				//if(Solver[threadID].RandomProb(prob)) { continue; }
+				int ones=0,zeros=0;
+				//voting with ranks values
+				for(int j=0;j<nThreads;j++) {
+					if(!initVars[j]) continue;
+					if(aBestVarValue[j][i]==1) ones++;
+					else zeros++;
+				}
+				//if all variables have the same value then the probability for selecting that value would be 1.
+				double probOne=Solver[threadID].FloatToProb(static_cast<double>(ones)/static_cast<double>(ones+zeros));
+				if(Solver[threadID].RandomProb(probOne)) Solver[threadID].aVarValue[i]=1;
+				else Solver[threadID].aVarValue[i]=0;
+			}
+		}
+        for(int i=0;i<nThreads;i++) {
+			omp_unset_lock(&write[i]);
+        }
+        //omp_unset_lock(&read);
+}
+
+#endif
+
+#ifdef RESTART_Norm
+//Resting using voting
+void Cooperation::RestartBest(int threadID) {
+		//std::cout<<"RestartBest: "<<threadID<<std::endl;
+        //omp_set_lock(&read);
+        for(int i=0;i<nThreads;i++) {
+                omp_set_lock(&write[i]);
+				BestImp[threadID][i]=false;
+        }
+
+        int numVars=Solver[threadID].iNumVars;
+		double W[nThreads];
+
+		double numClauses=static_cast<double>(Solver[threadID].iNumClauses);
+		for(int i=0;i<nThreads;i++) {
+			W[i]=(numClauses - static_cast<double>(iBestNumFalse[i]))/numClauses;
+			//W[i]=W[i]*W[i];
+		}
+
+		if(initVars[threadID]) {
+			for(int i=1;i<=numVars;i++) {
+				//double prob=Solver[threadID].FloatToProb(0.3);
+				//if(Solver[threadID].RandomProb(prob)) { continue; }
+				double ones=0,zeros=0;
+				//voting weigthing using fitness function
+				for(int j=0;j<nThreads;j++) {
+					if(!initVars[j]) continue;
+					if(aBestVarValue[j][i]==1) ones+=W[j];
+					else zeros+=W[j];
+				}
+				if(ones>zeros) Solver[threadID].aVarValue[i]=1;
+				else if(zeros>ones) Solver[threadID].aVarValue[i]=0;
+				else Solver[threadID].aVarValue[i]=Solver[threadID].RandomInt(2);
+			}
+		}
+        for(int i=0;i<nThreads;i++) {
+			omp_unset_lock(&write[i]);
+        }
+        //omp_unset_lock(&read);
+}
+#endif
+
+#ifdef RESTART_AGREE
+
+//Fix variables that agree, take others at random
+void Cooperation::RestartBest(int threadID) {
+		//std::cout<<"RestartBest: "<<threadID<<std::endl;
+        //omp_set_lock(&read);
+		int orderFit[nThreads];
+        for(int i=0;i<nThreads;i++) {
+                omp_set_lock(&write[i]);
+				BestImp[threadID][i]=false;
+				orderFit[i]=i;
+        }
+
+        int numVars=Solver[threadID].iNumVars;
+		
+
+		if(initVars[threadID]) {
+			for(int i=1;i<=numVars;i++) {
+				//double prob=Solver[threadID].FloatToProb(0.3);
+				//if(Solver[threadID].RandomProb(prob)) { continue; }
+				int ones=0,zeros=0;
+				//voting with ranks values
+				for(int j=0;j<nThreads;j++) {
+					if(!initVars[j]) continue;
+					if(aBestVarValue[j][i]==1) ones++;
+					else zeros++;
+				}
+				if(ones==nThreads) Solver[threadID].aVarValue[i]=1;
+				else if(zeros==nThreads) Solver[threadID].aVarValue[i]=0;
+				else Solver[threadID].aVarValue[i]=Solver[threadID].RandomInt(2);
+			}
+		}
+        for(int i=0;i<nThreads;i++) {
+			omp_unset_lock(&write[i]);
+        }
+        //omp_unset_lock(&read);
+}
+
+#endif
+
+#ifdef RESTART_MAJORITY
+
+//Fix variables that agree, take others at random
+void Cooperation::RestartBest(int threadID) {
+		//std::cout<<"RestartBest: "<<threadID<<std::endl;
+        //omp_set_lock(&read);
+		int orderFit[nThreads];
+        for(int i=0;i<nThreads;i++) {
+                omp_set_lock(&write[i]);
+				BestImp[threadID][i]=false;
+				orderFit[i]=i;
+        }
+
+        int numVars=Solver[threadID].iNumVars;
+		
+
+		if(initVars[threadID]) {
+			for(int i=1;i<=numVars;i++) {
+				//double prob=Solver[threadID].FloatToProb(0.3);
+				//if(Solver[threadID].RandomProb(prob)) { continue; }
+				int ones=0,zeros=0;
+				for(int j=0;j<nThreads;j++) {
+					if(!initVars[j]) continue;
+					if(aBestVarValue[j][i]==1) ones++;
+					else zeros++;
+				}
+				if(ones>zeros) Solver[threadID].aVarValue[i]=1;
+				else if(zeros>ones) Solver[threadID].aVarValue[i]=0;
+				else Solver[threadID].aVarValue[i]=Solver[threadID].RandomInt(2);
+			}
+		}
+        for(int i=0;i<nThreads;i++) {
+			omp_unset_lock(&write[i]);
+        }
+        //omp_unset_lock(&read);
+}
+
+#endif
+
+#ifdef RESTART_AVERAGE
+//Resting using Averaging best known solutions
+void Cooperation::RestartBest(int threadID) {
+		//std::cout<<"RestartBest: "<<threadID<<std::endl;
+        //omp_set_lock(&read);
+        for(int i=0;i<nThreads;i++) {
+                omp_set_lock(&write[i]);
+				BestImp[threadID][i]=false;
+        }
+
+        int numVars=Solver[threadID].iNumVars;
+		
+		UINT32 *VarBest=NULL;
+		UINT32 BestFitness=10000000;
+		/*for(int i=0;i<nThreads;i++) {
+			if(!initVars[i]) continue;
+			if(BestFitness > iBestNumFalse[i]) {
+				BestFitness=iBestNumFalse[i];
+				VarBest=aBestVarValue[i];
+			}
+		}*/
+		if(initVars[threadID]) {
+		for(int i=1;i<=numVars;i++) {
+			double prob=Solver[threadID].FloatToProb(0.3);
+			if(Solver[threadID].RandomProb(prob)) { continue; }
+			int ones=0,zeros=0;
+			//average but only taking into account important values
+			/*for(int j=0;j<nThreads;j++) {
+				if(!initVars[j]) continue;
+				if(bestScore[j][i]>0) {
+					if(aBestVarValue[j][i]==1) ones++;
+					else zeros++;
+				}
+			}*/
+			//only average
+			for(int j=0;j<nThreads;j++) {
+				if(!initVars[j]) continue;
+				if(aBestVarValue[j][i]==1) ones++;
+				else zeros++;
+			}
+			if(ones>zeros) Solver[threadID].aVarValue[i]=1;
+			else if(zeros>ones) Solver[threadID].aVarValue[i]=0;
+			else Solver[threadID].aVarValue[i]=Solver[threadID].RandomInt(2);
+		}
+		}
+        for(int i=0;i<nThreads;i++) {
+			omp_unset_lock(&write[i]);
+        }
+        //omp_unset_lock(&read);
+}
+
+#endif
+
+void Cooperation::InitSeed(int _seed) {
+	globalSeed=_seed;
+	sgenrand(globalSeed, &mt);
+}
+
+void Cooperation::UpdateStep(int threadID) {
+	//omp_set_lock(&read);
+	omp_set_lock(&write[threadID]);
+	if(!initVars[threadID]) {
+		iBestNumFalse[threadID] = Solver[threadID].iNumFalse;
+		int numVars=Solver[threadID].iNumVars;
+		aBestVarValue[threadID]=new UINT32[numVars+1];
+		bestScore[threadID]=new SINT32[numVars+1];
+		//FlipCount[threadID]=new UINT32[numVars+1];
+		for(int i=0;i<=numVars;i++) {
+			aBestVarValue[threadID][i]=Solver[threadID].aVarValue[i];
+			//FlipCount[threadID][i]=Solver[threadID].aFlipCounts[i];
+			//if( MaxFlips[threadID] < FlipCount[threadID][i] ) MaxFlips[threadID]=FlipCount[threadID][i];
+			if(Solver[threadID].aVarScore)
+				bestScore[threadID][i]=Solver[threadID].aVarScore[i];
+			else if(Solver[threadID].aMakeCount && Solver[threadID].aBreakCount)
+				bestScore[threadID][i]=Solver[threadID].aMakeCount-Solver[threadID].aBreakCount;
+			//else assert(false);
+		}
+		//isLocalMinimum[threadID]=Solver[threadID].IsLocalMinimum(false);
+		//std::cout<<"UpdateStep: "<<isLocalMinimum[threadID]<<std::endl;
+		initVars[threadID]=true;
+	}
+	if ( iBestNumFalse[threadID] > Solver[threadID].iNumFalse ) {
+		//std::cout<<"Updating... "<<Solver[threadID].iNumFalse<<std::endl;
+		//broadcasting the improvement to all available threads
+		for(int i=0;i<=nThreads;i++) BestImp[i][threadID]=true;
+		int numVars=Solver[threadID].iNumVars;
+		iBestNumFalse[threadID] = Solver[threadID].iNumFalse;
+		for(int i=0;i<=numVars;i++) {
+			aBestVarValue[threadID][i]=Solver[threadID].aVarValue[i];
+			//FlipCount[threadID][i]=Solver[threadID].aFlipCounts[i];
+			//if( MaxFlips[threadID] < FlipCount[threadID][i] ) MaxFlips[threadID]=FlipCount[threadID][i];
+			if(Solver[threadID].aVarScore)
+				bestScore[threadID][i]=Solver[threadID].aVarScore[i];
+			else if(Solver[threadID].aMakeCount && Solver[threadID].aBreakCount)
+				bestScore[threadID][i]=Solver[threadID].aMakeCount-Solver[threadID].aBreakCount;
+			//else assert(false);
+		}
+		//isLocalMinimum[threadID]=Solver[threadID].IsLocalMinimum(false);
+		//std::cout<<"UpdateStep: "<<isLocalMinimum[threadID]<<std::endl;
+	}
+	omp_unset_lock(&write[threadID]);
+	//omp_unset_lock(&read);
+}
+
+void parsingNumber(int n,int m) {
+	int tvars=m;
+	while(true) {
+		tvars--;
+		if(n<2) {
+			std::cout<<n<<" ";
+			break;
+		}
+		
+		int tmp=n%2;
+		std::cout<<tmp<<" ";
+		n=n/2;
+	}
+	while(tvars>0) {
+		tvars--;
+		std::cout<<"0 ";
+	}
+	std::cout<<std::endl;
+}
+
+void Cooperation::SetFixedVariables(std::vector<int> vars) {
+	int tFixVars=log2(nThreads);
+	if(vars.size() != tFixVars) {
+		vars.clear();
+		for(int i=1;i<=tFixVars;i++)
+			vars.push_back(i);
+	}
+	std::cout<<"tFixVars: "<<tFixVars<<" nThreads: "<<nThreads<<std::endl;
+	/*for(int i=0;i<nThreads;i++)
+		for(int j=0;j<Solver[i].iNumVars;j++)
+			Solver[i].iVarFixValue[j]=3;*/
+	for(int i=0;i<nThreads;i++) {
+		/*for(int j=0;j<tFixVars;j++) {
+			//Solver[i].iVarFixValue[vars[j]]=nThreads % MaxOnes[j];
+			//std::cout<<Solver[i].iVarFixValue[vars[j]]<<" ";
+			//std::cout<<(i+nThreads/2)<<" ";
+			//int tmp=(i+nThreads/2)% MaxOnes[j];
+		}
+		std::cout<<std::endl;*/
+		//std::cout<<"i: "<<i<<std::endl;
+		std::cout<<i<<") ";
+		parsingNumber(i, tFixVars);
+	}
+}
+
+void Cooperation::PrintBest(int threadID) {
+	if(!initVars[threadID]) return;
+	int numVars=Solver[threadID].iNumVars;
+	std::cout<<"Cooperation best["<<threadID<<"]"<<std::endl;
+	for(int i=1;i<=numVars;i++) 
+		std::cout<<aBestVarValue[threadID][i];
+	std::cout<<std::endl;
+        for(int i=0;i<nThreads;i++) {
+                std::cout<<"c Min clauses Core["<<i<<"]: "<<iBestNumFalse[i]<<std::endl;
+        }
+
+}
+
+void Cooperation::PrintSol(void) {
+	if(winnerThread==-1) return;
+	if(!initVars[winnerThread]) return;
+	int numVars=Solver[winnerThread].iNumVars;
+	std::cout<<"s SATISFIABLE"<<std::endl;
+	std::cout<<"v ";
+	for(int i=1;i<=numVars;i++) {
+		std::cout<<(aBestVarValue[winnerThread][i]==0?"-":"")<<i<<" ";
+	}
+	//std::cout<<std::endl<<"endSol"<<std::endl;
+	std::cout<<"0"<<std::endl;
+        for(int i=0;i<nThreads;i++) {
+                std::cout<<"c Min false clauses Core["<<i<<"]: "<<iBestNumFalse[i]<<std::endl;
+        }
+
+}
+
+int Cooperation::HammingDistance(int id1, int id2) {
+	if(!initVars[id1] || !initVars[id2]) return -1;
+	int numVars=Solver[id1].iNumVars;
+	int hDistance=0;
+	for(int i=1;i<=numVars;i++) {
+		if(aBestVarValue[id1][i] != aBestVarValue[id2][i]) hDistance++;
+	}
+	return hDistance;
+}
+
+//this method isn't efficient, but here we don't care about efficiency.
+void Cooperation::addHammingDistance(void) {
+	int hdTotal=0;
+	int total=0;
+	for(int i=0;i<nThreads;i++) {
+		for(int j=i+1;j<nThreads;j++) {
+			hdTotal+=HammingDistance(j,i);
+			total++;
+		}
+	}
+	HammingDis.push_back(static_cast<double>(hdTotal)/static_cast<double>(total));
+}
+
+void Cooperation::printHammingDistanceStats(void) {
+	int max=-1, min=10000000, tValues=0, maxId1=-1, maxId2=-1;
+	double mean=0;
+	for(int i=0;i<nThreads;i++) {
+		for(int j=i+1;j<nThreads;j++) {
+			int tmp=HammingDistance(i,j);
+			if(tmp==-1) continue;
+			if(max < tmp) { max=tmp; maxId1=i; maxId2=j;}
+			if(min > tmp) { min=tmp; }
+			mean+=(double)tmp;
+			tValues++;
+		}
+	}
+	std::cout<<"Max: "<<max<<" "<<maxId1<<","<<maxId2<<std::endl
+			 <<"Mean: "<<(mean/(double)tValues)<<std::endl;
+}
+
+/*void Cooperation::setEnd(void) {
+#pragma omp critical (accessToEnd)
+	{
+		End=true;
+	}
+}
+
+bool Cooperation::isSolution(void) {
+	return End;
+}*/
