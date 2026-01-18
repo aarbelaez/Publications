@@ -1,0 +1,289 @@
+name,id
+Galway (Bus Station),0
+Dublin Rd (GMIT),1
+Oranmore (Oran Town Centre),2
+Maree (School),3
+Clarenbridge (Church),4
+Kilcolgan (N67 Crossroad),5
+Ballinderreen (Westbound),6
+Kinvara (Main St Keoghs Bar),7
+Bellharbour (Opp Dalys Pub),8
+Nogra (Travellers Inn),9
+New Quay (Opp Linnanes Bar),10
+Bellharbour (Burren Cottages),11
+Ballyvaughan (Opp Spar),12
+Blackhead Lighthouse (southbound),13
+Murroogh Bridge (southbound),14
+Fanore Cross (ODonoghues Pub),15
+Ballinalacken Castle (Main Gate),16
+Lisdoonvarna (Burkes Garage),17
+Doolin (Rainbow Hostel),18
+Doolin (Hotel Doolin),19
+Doolin (Doolin Hostel),20
+Doolin (Camp Site),21
+Doolin (Opp Doolin Hostel),22
+Cliffs of Moher (Coach Park),23
+Liscannor (Cliffs of Moher Hotel),24
+Lahinch (Liscannor Road Bus Shelter),25
+Ennistymon (Opp Pot Duggans Pub),26
+Corofin Cross (Clare) (eastbound stop),27
+Inagh (Opp Service Station),28
+O Neills Cross (eastbound stop),29
+Fountain Cross (N85/R476 Junction),30
+Ennis (Bus Station),31
+Nogra (Opp Travellers Inn),32
+Fountain Cross (R476),33
+O Neills Cross (westbound stop),34
+Inagh (Service Station),35
+Corofin Cross (Clare) (westbound stop),36
+Ennistymon (Pot Duggans Pub),37
+Liscannor (Opp Cliffs of Moher Hotel),38
+Doolin (Opp Hotel Doolin),39
+Doolin (Churchfield B&B),40
+Ballinalacken Castle (Opp Main Gate),41
+Fanore Cross (Craggagh Post Office),42
+Murroogh Bridge (Caher River),43
+Blackhead Lighthouse (northbound),44
+Ballyvaughan (Spar Shop),45
+Bellharbour (Dalys Pub),46
+Bellharbour (Pier Entrance),47
+New Quay (Linnanes Bar),48
+Kinvara (Main St Opp Londis),49
+Ballinderreen (Eastbound),50
+Kilcolgan (Neilans Shop),51
+Clarenbridge (Sherrys),52
+Maree (Costcutter),53
+Oranmore (Opp Oran Town Centre),54
+Dublin Rd (Opp GMIT),55
+Raheen (Opposite St Nessans Church),56
+St Nessans Road (Opp Meadowvale Est),57
+St Nessans Rd (Opp University Hospital),58
+St Nessans Rd (Maypark),59
+St Nessans Rd (Opp Crescent SC),60
+Ballinacurra (Opp St Aubin),61
+Ballinacurra (No 5),62
+Ballinacurra (Lifford Lodge),63
+Punches Cross (Punches Cross),64
+O Connell Ave (Opp Ardglass),65
+O Connell Ave (Egleston Photography),66
+Barrington St (Car Park),67
+Upper Mallow St (Jctn Pery Sq),68
+Hyde Rd (Post Office),69
+Childers Rd (Lady of Lourdes Church),70
+Hyde Rd (No 39),71
+Hyde Rd (No 66),72
+Hyde Rd (No 76),73
+Hyde Rd (Meagher Close),74
+Upper Mallow St (Peoples Park),75
+Lower Mallow St (25),76
+Henry St (Garda Station),77
+Arthurs Quay (Opp Shopping Centre),78
+Athlunkard St (No 16),79
+Corbally Rd (Opp Topaz Station),80
+Corbally Rd (Milton House),81
+Corbally Rd (Mill Rd Junction),82
+Corbally Rd (St Munchins School),83
+Corbally Rd (Shannon Banks Estate),84
+Shannon Banks Est (13 Athlunkard Ave),85
+Shannon Banks Est (Op 45 Riverside Dr),86
+Shannon Banks Est (33 Riverside Dr),87
+Shannon Banks Est (Jnct Riverside Dr),88
+Shannon Banks Est (No 1 Riverwalk),89
+Westbury Est (Annavilla Grove),90
+Westbury Est (No. 150 Clonard),91
+Westbury Est (Op No 56 Clonard),92
+Westbury (St Nicholas Church),93
+Westbury Est (Opp No 10 Vernon Cres),94
+Corbally Rd (Opp Shannon Banks Est),95
+Corbally Rd (Irish Estates),96
+Corbally Rd (Opp Mill Rd Jctn),97
+Corbally Rd (House No 11),98
+Corbally Rd (Goosers Corner),99
+Athlunkard St (No 29),100
+Athlunkard St (Opp St Marys Cathedral),101
+O Connell St (Augustinian Church),102
+O Connell St (HLB Chartered Accountants),103
+O Connell St (O Connell Monument),104
+O Connell Ave (Model School),105
+O Connell Ave (Carmel House),106
+Punches Cross (Opp Punches Hotel),107
+Hyde Rd Limerick (No 167),108
+Hyde Ave Limerick (No 6),109
+Hyde Ave Limerick (Opp No 39),110
+Childers Rd (Op Lady of Lourdes Cntr),111
+Ballinacurra (Sandyville),112
+Ballinacurra (Tall Trees),113
+Ballinacurra Road (At Flyover),114
+St Nessans Rd (Crescent SC),115
+St Nessans Rd (Opp Maypark),116
+St Nessans Rd (University Hospital),117
+St Nessans Rd (Avonmore Rd Junction),118
+Raheen (St Nessans Church),119
+Raheen Ind Est (Kirby Engineering),120
+St Nessans National School,121
+Fr Russell Road (Opp Russell House),122
+Fr Russell Rd (Rosebrook Estate),123
+Fr Russell Rd (Op No 5 Rosebrook Est),124
+Fr Russell Rd (No 4 Russell House),125
+St Nessans School (Opp St Nessans),126
+Raheen Ind Est (Analog Devices),127
+Raheen Ind Est (FAS Office),128
+O Malley Pk (Opp 158 Sunny Hghts),129
+O Malley Pk (Opp Mountain View Tce),130
+O Malley Pk (Valley View),131
+Collins Avenue (Limerick),132
+Childers Rd (No. 1 Sycamore Ave),133
+Colbert Ave (No 70),134
+Colbert Ave (No 30),135
+Janesboro (13 Marian Ave),136
+Roxboro Rd (Tierneys Shop),137
+Roxboro Rd (Hamilton House),138
+Roches Street (Mortells Restaurant),139
+Henry Street (Dunnes Stores),140
+Clancy Strand (Opp Treaty Stone),141
+High Rd (Thomondgate (Opp No 65),142
+O Callaghan Ave (Johnseys Shop),143
+O Callaghan Ave (No 18 Killeely Rd),144
+O Callaghan Ave (No 25 Killeely Rd),145
+Moyross (Dalgaish Park),146
+Knockalisheen Rd (Moyross Est Entrance),147
+Sarsfield Gdns Lr (At Whitecross Gdns),148
+Sarsfield Gdns (Business Centre),149
+Moyross (Opp Corpus Christy Church),150
+Moyross (Opp Community Centre),151
+Craeval Park (Turning Circle),152
+Craeval Pk (Opp Turning Circle),153
+Pineview Gardens Entrance,154
+Pineview (Delmege Gardens),155
+Pineview Gardens,156
+Moyross (Community Centre),157
+Moyross Main Rd (The Rock),158
+Moyross (Watchhouse Cross Library),159
+Hennessy Ave (No 44),160
+O Callaghan Ave (Opp No 18),161
+Sexton St Nth (De Valera Pk),162
+High Road (No 90),163
+Clancy Strand (Treaty Stone),164
+Clancy Strand (Sarsfield Bridge),165
+William St (Superdrug Pharmacy),166
+Lower Roxboro Rd (Opp CBS School),167
+Roxboro Rd (St Annes Day Hosp),168
+Roxboro Rd (No 13),169
+Janesboro (No 20 Marian Ave),170
+Janesboro (No 31 Colbert Ave),171
+Janesboro (No 38 O Donoghue Ave),172
+Carew Park (Opp Swallow Drive),173
+Carew Pk (Star Court),174
+Carew Pk (Opp No 23 Maigue Way),175
+Carew Pk (No 97 Donoughmore Crescent),176
+Carew Pk (De Vere Court),177
+Childers Rd (ALDI Store),178
+Collins Ave (Olympic Arms Galvone),179
+O Malley Pk (Southill Health Centre),180
+O Malley Pk (Castle Oaks View),181
+O Malley Pk (Outside No 391),182
+University of Limerick (Stables),183
+Plassey Pk Rd (UL East Gate),184
+Plassey Pk Rd (Opp Oak Lawn),185
+Plassey Pk Rd (National Tech Pk),186
+Plassey PK Rd (Vistakon Ireland),187
+Plassey Pk Rd (Op National Tech Pk),188
+Kilmurry Hotel (Milford Rd),189
+Dublin Rd (Opp The Hurlers Pub),190
+Dublin Rd (Opp Elsinor Est),191
+Dublin Rd (Jct Golf Links Rd),192
+Dublin Rd (Groody Roundabout),193
+Dublin Rd (Parkway Retail Pk),194
+Childers Rd (Shopping Centre),195
+Ballysimon Rd (Woodlawn Park),196
+Ballysimon Rd (Tubs & Tiles),197
+Mulgrave St (Munster Fair Tavern),198
+Mulgrave St (St Josephs Hosp),199
+Mulgrave St (Jerry O Deas Bar),200
+Mulgrave St (Opp Fire Station),201
+Sarsfield St (Debenhams),202
+Avonmore Road,203
+Mulcaire Rd (Raheen Food Store),204
+Mulcaire Rd (Opp No 1 Castle Pk),205
+Ballycummin (The Forts),206
+Ballycummin (Rathmore),207
+Ballycummin Rd (Opp Southland House),208
+Church Rd (Forge Estate),209
+Ballycummin Rd (Opp Dry Cleaners),210
+Ballycummin (The Sanctuary),211
+Ballycummin (Opp No 26 Rathmore),212
+Ballycummin (Opp No 7 The Forts),213
+Dooradoyle Rd (Cormac Byrnes),214
+Mulcaire Rd (No 1 Castle Pk),215
+Mulcaire Rd (No 1 Crescent Court),216
+Avonmore Rd (Eircom Building),217
+O Connell St Crescent (Tutorial College),218
+Upr William St (Future Sound & Vision),219
+Mulgrave St (College of Further Ed),220
+Mulgrave St (Glynns Shop),221
+Mulgrave St (Brannigans Pub),222
+Mulgrave St (Ger Malones),223
+Mulgrave St (St Patricks Rd),224
+Childers Rd (Opp Shopping Centre),225
+Childers Rd (Opp Claughaun GAA),226
+Dublin Rd (Opp Parkway Retail Pk),227
+Plassey Park Rd (Opp Nursing Home),228
+University of Limerick (Flag Poles),229
+University of Limerick (Dromroe Stop),230
+Lynwood Park (Toghers Shop),231
+Cathal Brugha Rd (Op No 1 Lynwood Pk),232
+St Patricks Rd (St Brigids Church),233
+Well Field (Opp Richmond RFC Pitch),234
+Sth Claughan Rd (No 25),235
+Sth Claughan Rd (No 7),236
+Markets Field Terrace (No 9),237
+Liddy St (Old Dunnes Stores),238
+Athlunkard St (Dick Devanes Corner),239
+The Island Rd (Opp Island Rd Stores),240
+The Island Rd (Stores Coal Yard),241
+St Itas St (Kings Island Creche),242
+St Itas St (No 2),243
+St Itas St (No 34),244
+St Marys Pk (At No 122 St Itas St),245
+St Itas St (No 82),246
+St Itas St (No 58),247
+St Itas St (No 14),248
+The Island Rd (No 12),249
+The Island Rd (Island Rd Stores),250
+Markets Field Terrace (Opp No 9),251
+Garryowen Stores,252
+Sth Claughan Rd (Opp No 7),253
+Sth Claughan Rd (Opp No 25),254
+Well Field (Richmond RFC Pitch),255
+St Patricks Rd (Op St Brigids Church),256
+Edward St (Quins Cottage),257
+Byrne Ave (Jctn of Byrne Ave),258
+Ennis Rd (Strand Hotel),259
+Shelbourne Rd (St Camillus Hosp),260
+Shelbourne Rd (Opp Shelbourne Pk),261
+Kileely Rd (Health Centre),262
+Ballynanty Rd (Opp Credit Union),263
+Ballynanty (No 31 Shanabooley Rd),264
+Moylish Rd (Opp Community Centre),265
+Ballynanty (Opp No 93 Shanabooly Rd),266
+Ballynanty (Community Centre),267
+Ballynanty Rd (No 32 Shanabooley Rd),268
+Ballynanty (Credit Union),269
+Kileely Rd (Opp Health Centre),270
+Shelbourne Rd (Park),271
+Ennis Rd (Moravan Hse Union Cross),272
+Edward St (Jctn of Wolfe Tone St),273
+Parnell St (Ladbrokes),274
+New Rd (S Coffee),275
+Pennywell (Limerick Paint Supplies),276
+Clare St (Twin Oaks B&B),277
+Castletroy Shopping Centre,278
+Monaleen (Opp Hazel Hall),279
+Schoolhouse Road (Monaleen GAA),280
+Schoolhouse Rd (Kylemore),281
+Golf Links Rd (Fox Hollow),282
+Golf Links Rd (Tudor House),283
+Dublin Rd (Frank Hogan Motors),284
+Pennywell Rd (Opp Laundrette),285
+Parnell St (Colbert Station),286
+Barrington St (At No 24),287

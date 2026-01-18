@@ -1,0 +1,255 @@
+name,id
+Parkmore Rd (Roundabout),0
+Parkmore Rd (Opp Racecourse Side Gate),1
+Parkmore Rd (Opp Western Motors Entr),2
+Monivea Rd (Opp Clayton Hotel),3
+Monivea Rd (Paddocks),4
+Monivea Rd (Ballybrit Heights),5
+Monivea Rd (Cottages),6
+Castlepark Rd (Glenavon Drive),7
+Castlepark Rd (Gortcam),8
+Castlepark Rd (Sliabh Rua),9
+Castlepark Rd (Community Centre),10
+Ballybane Rd (John Paul Centre),11
+Monivea Rd (Monivea Park),12
+McDonagh Ave (Old Mervue),13
+Monivea Rd (Opp Crown Plaza),14
+Monivea Rd (GMIT Cluam Mhuire),15
+Monivea Rd (Wellpark Retail Est),16
+College Rd Galway (Opp Loyola Pk),17
+College Rd Galway (Opp Sportsground),18
+College Rd Galway (Opp City Hall),19
+Forster St (Morgans Hotel),20
+Spanish Parade (Spanish Arch),21
+Fr Griffin Rd (Opp Fr Griffin Park),22
+Fr Griffin Ave (Opp Sea Road),23
+Salthill Rd Lwr (Lios Ealtan),24
+Salthill Rd Lwr (St Josephs),25
+Salthill Rd Lwr (Opp Devon Park),26
+Salthill Rd Lwr (Opp Warwick Hotel),27
+Upper Salthill Rd (Canton Kitchen),28
+Upper Salthill Rd (Opp Western House),29
+Dalysfort Rd (Top of Hill),30
+Dalysfort Rd (Hollands Shop),31
+Dalysfort Rd (Dr Mannix Rd Jctn),32
+Dr Mannix Rd (Rockbarton Rd ),33
+Dr Mannix Rd (GAA Pitch),34
+Threadneedle Rd (Opp Tennis Courts),35
+Upper Salthill Rd (Diving Board),36
+Upper Salthill Rd (Salthill Hotel),37
+Upper Salthill Rd (Waterfront),38
+Upper Salthill Rd (Caesars Palace),39
+Salthill Rd Lwr (Opp Kelleghers Gar),40
+Salthill Rd Lwr (Devon Park),41
+Salthill Rd Lwr (Feeneys Shop),42
+Salthill Rd Lwr (Opp Lios Ealtan),43
+Fr Griffin Ave (Montpellier Terrace),44
+Fr Griffin Rd (Fr Griffin Park),45
+Spanish Parade (Jurys Hotel),46
+Merchants Rd (Kinlay House),47
+Br Brendain Ui Either (Go Bus Office),48
+College Rd Galway (City Hall),49
+College Rd Galway (Sportsground),50
+College Rd Galway (Loyola Park),51
+Monivea Rd (VEC),52
+Monivea Rd (Opp Wellpark Est),53
+Monivea Rd (Crown Plaza),54
+McDonagh Ave (Old Mervue Shops),55
+Monivea Rd (Opp Monivea Park),56
+Ballybane Rd (Opp Shopping Centre),57
+Ballybane Rd (Opp Ard Aobhinn Drive),58
+Castlepark Rd (Opp John Paul Centre),59
+Castlepark Rd (Opp Community Centre),60
+Castlepark Rd (Opp Gortcam),61
+Castlepark Rd (Opp Glenavon Drive),62
+Monivea Rd (Opp Cottages),63
+Monivea Rd (Opp Ballybrit Heights),64
+Monivea Rd (Jctn Lios Caisil),65
+Monivea Rd (Clayton Hotel),66
+Parkmore Rd (Western Motors Entr),67
+Parkmore Rd (Racecourse Side Gate),68
+Parkmore Rd (Parkmore Ind Est),69
+Ballybane Rd (St James Rd),70
+Ballybane Rd (Shopping Centre),71
+Shangort Rd (Cotters Shop),72
+Shangort Rd (Church),73
+Ballymoneen Rd (Barna Rd Jctn),74
+Barna Road (Knocknacarra Cross),75
+Knocknacarra (Topaz Filling Stat),76
+Knocknacarra Rd (Burren View Hts),77
+Knocknacarra Rd (Opp Woodlawn),78
+Kingston Rd (Kingston Gardens),79
+Kingston Rd (Manor Drive),80
+Taylors Hill Rd (Threadneedle Junct),81
+Taylors Hill Rd (Opp Ardmore),82
+Taylors Hill Rd (Highfield Park),83
+Maunsells Rd (Higgins DIY),84
+Colmcille Rd (Scoil Bride),85
+Colmcille Rd (Opp Community Centre),86
+Costello Rd (Opp McDara Rd),87
+Costello Rd (HSE Clinic),88
+Newcastle Rd (University Hospital),89
+University Rd (NUIG Main Gate),90
+University Rd (Opp Cathedral),91
+Francis St (Opp Abbey Church),92
+Prospect Hill (Fahys Pub),93
+Bohermore (Opp Tonerys Pub),94
+Bohermore (Liam Mellows Tce),95
+Bohermore (Spar Filling Station),96
+Dublin Rd (G Hotel),97
+Dublin Rd (Opp Renmore Park),98
+Renmore Rd (Bon Secours Hosp),99
+Renmore Rd (Opp Molloys Centra),100
+Renmore Rd (Dun Na Mara),101
+Renmore Rd (Opp Army Barracks),102
+Hawthorne Drive (Blackthorn Pk),103
+Hawthorn Drive (Rowan Ave),104
+Ballyloughane Rd (Op Murrough Ave Jct),105
+Fuschia Drive (Larchfield Ave),106
+Ballyloughane Rd (Dairies),107
+Dublin Rd (GMIT),108
+Dublin Rd (Merlin Park Gate),109
+Merlin Park Terminus (Merlin Church),110
+Dublin Rd (Opp Woodhaven),111
+Dublin Rd (Opp GMIT),112
+Ballyloughane Rd (Opp Dairies),113
+Ballyloughane Rd (Murrough Ave Jct),114
+Fuschia Drive (Opp Larchfield Ave),115
+Hawthorne Drive (Opp Rowan Ave),116
+Hawthorne Drive (Opp Blackthorn Pk),117
+Hawthorne Drive (Arbutus Ave Jctn),118
+Renmore Rd (Army Barracks),119
+Renmore Rd (Opp Dun Na Mara),120
+Renmore Rd (Molloys Centra),121
+Renmore Rd (Duggans Shop),122
+Dublin Rd (Woodlands),123
+Dublin Rd (Opp G Hotel),124
+Bohermore (New Cemetary),125
+Bohermore (Connolly Terrace),126
+Bohermore (Tonerys Bar),127
+Prospect Hill (Andys Haircare),128
+Francis Street (Abbey Church),129
+University Rd (Cathedral),130
+University Rd (Opp NUIG Main Gate),131
+Newcastle Rd (Opp University Hospital),132
+Costello Rd (Opp HSE Clinic),133
+Costello Rd (McDara Rd Junction),134
+Colmcille Rd (Community Centre),135
+Colmcille Rd (Opp Scoil Bride),136
+Maunsells Rd (Opp Higgins DIY),137
+Maunsells Rd (Maunsells Rd Junc),138
+Taylors Hill (St Annes),139
+Taylors Hill (Dominican Convent),140
+Taylors Hill (Ardmore),141
+Taylors Hill (Colaiste Einde),142
+Kingston Rd (Opp Manor Drive),143
+Kingston Rd (Opp Kingston Gardens),144
+Shangort Rd (Joyces Supermarket),145
+Taylors Hill Rd (Opp St Annes),146
+Maunsells Rd (Opp Maunsells Rd Jct),147
+Oranmore (Opp Oran Town Centre),148
+Oranmore Village (Op Calacanctius Col),149
+Dublin Rd (Galway Clinic),150
+Dublin Rd (Castlegar Complex),151
+Dublin Rd (Kingsvalley Hotel),152
+Dublin Rd (Dawn Dairies),153
+Dublin Rd (Opp Glenina Hgts),154
+Newcastle Rd Uppr (Opp NUIG West Gate),155
+Lower Newcastle (G & L Stores),156
+Lower Newcastle (Moyola Park Entr),157
+Lwr Newcastle (Opp St Francis Home),158
+Lower Newcastle (Greenfields Entr),159
+Thomas Hynes Rd (Clifton Pk),160
+Thomas Hynes Rd (Fairlands Park),161
+Thomas Hynes Rd (St Josephs School),162
+Thomas Hynes Rd (Ardilaun Road),163
+Thomas Hynes Rd (Opp Ardilaun Rd),164
+Siobhain McKenna Rd (Corrib Pk),165
+Siobhain McKenna Rd (Camillaun Pk),166
+Siobhain McKenna Rd (Westside Pitches),167
+Circular Rd (Opp Currach Bui),168
+Seamus Quirke Rd (Op Rahoon Rd Jctn),169
+Westside (Shopping Centre),170
+Siobhain McKenna Rd (Gaelcarrig Pk),171
+Siobhain McKenna Rd (Laurel Park),172
+Thomas Hynes Rd (Opp St Josephs Sch),173
+Thomas Hynes Rd (Hazel Park),174
+Thomas Hynes Rd (Tudor Lawns),175
+Lower Newcastle (Corrib Village),176
+Lower Newcastle (St Francis Home),177
+Lower Newcastle (AIB Bank),178
+Newcastle Rd (NUIG West Gate),179
+Dublin Rd (Glenina Heights),180
+Dublin Rd (Opp Dawn Dairies),181
+Dublin Rd (Opp Galway Crystal Jctn),182
+Dublin Rd (Opp Coast Rd Jctn),183
+Dublin Rd (Opp Castlegar Complex),184
+Gort na Bro (B&Q Retail Park),185
+Garrai de Brun (Op Garrai de Brun Ent),186
+Bishop O Donnell Rd (Opp Droim Chaoin),187
+Seamus Quirke Rd (Rahoon Rd Junc),188
+Seamus Quirke Rd (Circular Rd Junc),189
+Seamus Quirke Rd (Westside Shopp Cent),190
+Seamus Quirke Rd (Corrib Park),191
+Seamus Quirke Rd (Snipe Lawn),192
+Tuam Rd (Riverside Estate),193
+Tuam Rd (Opp Mervue Ind Est),194
+Tuam Rd (Trappers Inn),195
+Connolly Ave (Pearse Avenue),196
+Connolly Ave (Opp Fahys Field),197
+St James Road (Mervue Church),198
+St James Rd (Bayview Heights),199
+Ballybane Ind Est (Entrance),200
+Ballybane Ind Est.(Hewlett Packard),201
+St James Rd (Opp Bayview Hgts),202
+St James Rd (HSE Clinic),203
+Connolly Ave (Walter Macken Flats),204
+Connolly Ave (Fahys Field),205
+Connolly Ave (Opp Pearse Ave),206
+Tuam Rd (Opp Trappers Inn),207
+Tuam Rd (Mervue Industrial Est),208
+Tuam Rd (Opp Riverside Est),209
+Seamus Quirke Rd (Opp Snipe Lawn),210
+Seamus Quirke Rd (Arch Motors),211
+Seamus Quirke Rd (Westside Retail Pk),212
+Seamus Quirke Rd (ESB Sub Station),213
+Bishop O Donn Rd (Op Rahoon Rd Jnc),214
+Bishop O Donnell Rd (Droim Chaoin),215
+Garrai De Brun (Garrai De Brun Ent),216
+Eyre Square East (Stop No 6),217
+Headford Rd (Opp Woodquay),218
+Headford Rd (Galway Retail Park),219
+Headford Rd (Opp Dunnes Stores),220
+Coolough Rd (Opp Menlo Park Hotel),221
+Crestwood (Crestwood 48 to 62),222
+Tirellan Heights (Ballinfoyle Rd),223
+Tirellan Hts (Tirellan Hts 344-385),224
+Tirellan Heights (Headford Rd Jctn),225
+Headford Rd (Church),226
+Headford Rd (Sceilig Ard),227
+Bothair an Choiste (Cluain Riocard),228
+Bothair an Choiste (Opp Maigh Riocard),229
+Bothair an Choiste (Maigh Riocard),230
+Bothair an Choiste (Lochan),231
+Headford Rd (Ballinfoyle Mews),232
+Headford Rd (Brookedale),233
+Tirellan Heights (St Francis NS),234
+Tirellan Heights Opp (344 to 385),235
+Tirellan Heights (Ballinfoyle Road),236
+Crestwood (Crestwood 47 to 33),237
+Coolough Rd (Menlo Park Apartments),238
+Headford Rd (Dunnes Stores),239
+Headford Rd (Galway Shopping Centre),240
+Headford Rd (Woodquay),241
+Eyre Square North (Stop No 2),242
+Eyre Square East (Stop No 8),243
+Doughiska Rd (Amber Hse Hotel),244
+Doughiska Rd (Merlin Woods Prm Sch),245
+Doughiska Rd (Nestors Centra),246
+Doughiska Rd (NCT Entrance),247
+Doughiska Rd (Op Brierhill Shop Cen),248
+Doughiska Rd (Brierhill Shop Centre),249
+Doughiska Rd (Opp Nestors Centra),250
+Doughiska Rd (Opp Primary School),251
+Doughiska Rd (Opp An Fiodan),252
+Doughiska Rd (Castan),253

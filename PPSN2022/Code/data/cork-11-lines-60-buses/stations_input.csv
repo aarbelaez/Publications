@@ -1,0 +1,580 @@
+name,id
+St. Patrick St (Brown Thomas B),0
+St. Patrick Street (Princes Street Junction),1
+South Main Street (Bishop Lucey Park),2
+Frenches Quay (Sulls Electric Shop),3
+Probys Quay (St Finbarrs Cathederal),4
+Noonan Rd (98th Street Junction),5
+Lough Road (Greenmount Ave Junction),6
+Lough Rd (Opposite Cork Lough Park),7
+Lough Rd (Lough Pet Supplies),8
+Togher Road (Opp Earlwood Estate),9
+Togher Road (Edward Walsh Rd),10
+Togher Road (Deanwood),11
+Togher Road (Tramore Rd Jctn),12
+Togher Road (Opposite Togher Church),13
+Spur Hill (Opposite Sandowne),14
+Spur Hill (Fernwood Close),15
+Sarsfield Road (Eagle Valley),16
+Sarsfield Road (Harley Court),17
+Sarsfield Rd (Penneys Wilton),18
+CUH (A and E),19
+CUH (Main Gate),20
+Sarsfield Road (Opp Penneys Wilton),21
+Sarsfield Road (Opp Harleycourt),22
+Sarsfield Road ( Funeral Home),23
+Spur Hill (Opposite Fernwood Estate),24
+Spur Hill (Sandowne),25
+Togher Road (Togher Church),26
+Togher Road (Deanrock),27
+Togher Road (Lough Credit Union),28
+Togher Road (Sycamore Place),29
+Togher Road (Earlwood Estate),30
+Lough Rd (Pearse Rd Junction),31
+Lough Rd (Cork Lough Park South End),32
+Lough Rd (Cork Lough Park North End),33
+Lough Road (Lough Church),34
+Noonan Road (Greg Road Junction),35
+Sharman Crawford St (St Als School),36
+Wandesford Quay (Opp Fenton Gallery),37
+Grand Parade (Daybreak),38
+South Mall (VHI House Stop A),39
+Manor Farm (Northbound),40
+Lwr Pouladuff Rd(Opp Service station),41
+Lwr Friars Walk (Manhattan Bar),42
+Connolly Rd (Opp Connolly Green),43
+Lower Pouladuff Rd (Lee Metal Ltd),44
+Lwr Pouladuff Rd (Patrick Trahy Rd Jctn),45
+Lower Pouladuff Rd (Sorrento),46
+Pearse Road (Ballyphehane),47
+Pearse Road (Friars Walk Junction),48
+Pearse Road (Kent Road Junction),49
+Pearse Road (O Growney Crescent),50
+Curragh Road (Eagle Vile),51
+Curragh Rd (Turners Cross Stadium),52
+Evergreen Rd (Opp Presentation Sch),53
+Summerhill South (Opp Capwell Garage),54
+Infirmary Road (St Johns College),55
+South Terrace (Opp Irish Pensions),56
+George's Quay (Abbey Court House),57
+Grand Parade (Argos),58
+St. Patrick Street (Awear),59
+Upper John Street (Maldron Hotel),60
+Watercourse Road (Blackpool Pharmacy),61
+Watercourse Road (Blackpool Health Ctr),62
+Watercourse Rd (Blackpool Church),63
+Dublin Street (Dunnes),64
+Dublin Street (Ulster Bank),65
+Bros Delaney Rd (Blackpool Shop Cent),66
+Old Commons Rd (Opp Topaz Service St),67
+Farranferris Ave (Pophams Rd Junction),68
+Pophams Rd (Opposite Community Centre),69
+Knockpogue Ave (Faranree Church),70
+Knockpogue Avenue (Opp Scoil Iosagain),71
+Fairhill (Liam Healey Rd Junction),72
+Mt Agnes Road (Eir Churchfield),73
+Fairfield Upper (Opp Peaches Salon),74
+Fairhill Upper (Opp Bridevalley View),75
+Fairhill Upper (Na Phiarsaigh GAA),76
+Parklands Drive (Park View Green),77
+St. Patrick Street (Marks and Spencer),78
+Manor Farm (Manor Crescent),79
+Manor Farm (Southbound),80
+Camden Quay (Bridge Street),81
+St Patrick St (Princes St Junction),82
+Grand Parade (Caseys Furniture),83
+Cork City Hall,84
+Langford Row (Opp St Johns College),85
+Summerhill South (Capwell Garage),86
+Evergreen Rd (Presentation School),87
+Curragh Road (Credit Union),88
+Curragh Rd (Opp Turners Cross Stad),89
+Pearse Road (A.I.B),90
+Pearse Road (Irish Independant Park),91
+Pearse Road (Connolly Road Junction),92
+Pearse Road (Clarkes Road Junction),93
+Pearse Road (Pearse Square Shops),94
+Lwr Pouladuff Rd (Fr Dominic Rd Jctn),95
+Lwr Pouladuff Rd (Saraville),96
+Lwr Pouladuff Rd (Connolly Rd Jctn),97
+Lwr Pouladuff Rd (Opp UCC Park),98
+Lwr Pouladuff Rd (Forge Hill Jctn),99
+Parklands Drive (Park Grove),100
+Fairhill Drive (St. Johns Well),101
+Fairhill Drive (Bridevalley Lower),102
+Fairhill Upper (Bridevalley View),103
+Fairhill Upper (Opp Willow Bank),104
+Fairfield Rd (Side of Peaches Salon),105
+Fairfield Rd (Fair Green Pitches),106
+Knockpogue Ave (Opp Credit Union),107
+Pophams Rd (Before Community Ctr),108
+Farranferris Ave (North End),109
+Fairfield Ave (Mulberry Heights Pk),110
+Old Commons Rd (Topaz Service St),111
+Bros Del Rd (Opp Blackpool Shop Ctr),112
+Dublin Street (Opp Dunnes),113
+Watercourse Road (Opp Blackpool Church),114
+Watercourse Rd (Opp Maxol Garage),115
+Watercourse Rd (Constellation Bar),116
+Kent Rail Station (Horgans Quay),117
+Parnell Place (City Bus Stop),118
+Washington Street (Four Star Pizza),119
+Lancaster Quay (River Lee Hotel),120
+Western Road (University College Gate),121
+Donovans Road (UCC Honan Chapel),122
+College Rd (Opposite UCC Boole),123
+College Road (Opp UCC Food Science),124
+College Rd (Opposite Bon Secours Hosp),125
+College Rd (Opposite Brookfield Lodge),126
+College Road (Orchard Rd Westbound),127
+Model Farm Rd (Dennehys Cross Church),128
+Model Farm Road (Woodlawn),129
+Model Farm Road (Opp Farranlea Park),130
+Model Farm Rd (Opposite Mount Mercy),131
+Model Farm Rd (Parkway Drive Junction),132
+Rossa Ave (CETB Cork Training Centre),133
+C I T (Campus),134
+St. Patrick St (Drawbridge St Jctn),135
+Cork Institute of Technology,136
+Rossa Avenue (Allendale Avenue Jctn),137
+Curraheen Road (Spioraid Naoimh),138
+Melbourne Rd (Glencairn Park),139
+Melbourne Rd (IDA Enterprise Ireland),140
+Model Farm Rd (Opp Ultralase Ireland),141
+Model Farm Rd (IDA Technology Park),142
+Model Farm Rd (Dept of Agriculture),143
+Model Farm Road (Farranlea Park),144
+Model Farm Rd (Bishopstown Park),145
+Model Farm Rd (Dennehy's Cross Jctn),146
+College Road (Orchard Rd Eastbound),147
+College Road (Brookfield Lodge),148
+College Road (Bon Secours Hospital),149
+College Road (Food Science UCC),150
+College Road (UCC Gates Boole),151
+Donovans Road (Opp Honan Chapel),152
+Mardyke Walk (St. Joseph's School),153
+Mardyke (Presentation College),154
+Sheares Street (Mercy Hospital),155
+McCurtain Street (Hillbillys),156
+Ovens (Grange Road Terminus),157
+Ovens (Opp Grange Manor),158
+Killumney Road (Kilumney Cross),159
+Ovens (EMC Terminus),160
+Ballincollig West (Classes Lake),161
+Ballincollig West (Opp Aylsbury Estate),162
+Ballincollig West (Opp Old Quarry),163
+Ballincollig West (Opp Coolroe Heights),164
+Ballincollig West (Op White Horse Bar),165
+Ballincollig (Opp Jctn Barrys Road),166
+Ballincollig (Shopping Centre),167
+Ballincollig Town Centre (Garda St),168
+Ballincollig (East Gate),169
+Ballincollig (Opp Rosewood Est),170
+Model Farm Rd (Guide Dog Centre),171
+Model Farm Rd (Church Cross East),172
+Model Farm Rd (Inchaggin Eastbound),173
+Model Farm Road (Eden Hall),174
+Dennehy's Cross (Opp Cork Farm Ctr),175
+Victoria Cross (Victoria Lodge),176
+Western Rd (Opp UCC Western Gateway),177
+Western Rd (Opp UCC Castlewhite),178
+Western Road (Gaol Crossl),179
+South Mall (Opp Cork Passport Office),180
+Southern Rd (Opp Owl Printers),181
+Douglas Road (Opp St Finbarrs Hospital),182
+Douglas Road (Glengesh Bellair),183
+Douglas Road (Cross Douglas Rd Jctn),184
+Douglas Road (Before Woolharra Park),185
+Douglas Road (Ardfallen Shopping Mall),186
+Douglas Road (Endsleigh Estate),187
+Douglas Road (Clermont Ave),188
+Douglas East Village (Opp Tramway Tce),189
+Maryborough Hill (Op The Paddocks),190
+Maryborough Hill (Hotel and Spa),191
+Maryborough Hill (Lissadell Southbound),192
+Maryborough Hill (Broadale Southbound),193
+Maryborough Hill (Hilltown Southbound),194
+Carrigaline (Opp Carrignacurra),195
+Carrigaline (Herons Wood),196
+Carrigaline (Cork Rd LyndenDental),197
+Carrigaline (Church),198
+Carrigaline (Town Ctr Bridge Southbound),199
+Carrigaline (Lr Kilmoney Abbey View),200
+Carrigaline (Lr Kilmoney Clevedon),201
+Carrigaline (Uppr Kilmoney Forest Pk),202
+Carrigaline (Uppr Kilmoney Clevedon),203
+Carrigaline (Liosbourne),204
+Carrigaline (Ferney Road),205
+Carrigaline (Forrest Hills),206
+Carrigaline (Fernlea Ferney Road),207
+Carrigaline (Opp Carrigaline Ind Est),208
+Crosshaven (Yacht Club Southbound),209
+Crosshaven (Opp The Grand Apts),210
+Crosshaven (Opp Buckleys Pub),211
+Crosshaven (Village Ctr Southbound),212
+Camden Road (Upper),213
+Fort Camden,214
+Carrigaline (Opp Liosbourne),215
+Carrigaline (Uppr Kilmoney Opp Clevedon),216
+Carrigaline (Town Ctr Bridge Northbound),217
+Carrigaline (Carrigaline Court Hotel),218
+Carrigaline (Cork Rd Opp Dentist),219
+Carrigaline (Opp Herons Wood),220
+Carrigaline (Carrignacurra),221
+Maryborough Hill (Hilltown),222
+Maryborough Hill (Broadale Northbound),223
+Maryborough Hill (Lisadell Northbound),224
+Maryborough Hill (Opp Hotel),225
+Maryborough Hill (Paddocks),226
+Douglas Village East (Shopping Centre),227
+Douglas Road (South Link Exit Slip Road),228
+Douglas Road (Douglas Carryout),229
+Douglas Road (Opp Eglantine School),230
+Douglas Road (Opp Ardfallen Mall),231
+Douglas Road ( Rosebank),232
+Douglas Road (Whitethorn),233
+Douglas Road (Bellair Junction),234
+Douglas Road (St Finbarrs Hospital),235
+Southern Road (Capwell Rd Junction),236
+Grand Parade (City Library),237
+Washington Street (Costigans),238
+Western Road (Glucksman Gallery),239
+Western Rd (UCC Western Gateway),240
+Wilton Road (Victoria Cross),241
+Model Farm Rd (Motor Tax Office),242
+Model Farm Road (Opp Eden Hall),243
+Model Farm Rd (Inchaggin Westbound),244
+Model Farm Rd (Church Cross West),245
+Ballincollig (Iniscarra View),246
+Ballincollig (Rosenalee Care Centre),247
+Ballincollig (Opp Fr Sexton Park),248
+Ballincollig (Main St Supervalu),249
+Ballincollig (Opp Shopping Centre),250
+Ballincollig (Jctn Barrys Road),251
+Ballincollig West (White Horse Bar),252
+Ballincollig West (Coolroe Heights),253
+Ballincollig West (Old Quarry),254
+Ballincollig West (Aylsbury Estate),255
+Ovens (Grange Manor),256
+Camden Road (Southbound),257
+Camden Road (Point Lane Jctn),258
+Crosshaven (Village Ctr Northbound),259
+Crosshaven (Buckleys Bar),260
+Crosshaven (Opp Boatyard),261
+Crosshaven (The Grand Apts),262
+Crosshaven (Hassets Restuarant),263
+Mount Oval (Monswood Est),264
+Garryduff (Sports Ground),265
+Clarkes Hill (Monfield),266
+Clarkes Hill (Landsborough),267
+Clarkes Hill (The Borough),268
+Maryborough Woods (Greendale Rd)),269
+Maryborough Woods (Welwyn Rd Jctn),270
+Maryborough Hill Lwr (Northbound),271
+Carrigaline Road (Ardcarrig),272
+Bandon Road (Mok's Pub),273
+Bandon Road (Dean Roches Cross),274
+Glasheen Road (Hartlands Ave),275
+Glasheen Road (Glasheen Park),276
+Glasheen Road (Flannery's Pub),277
+Clashduv Road (Clashduv Estate),278
+Riverview Est Rd (Clashduv Junction),279
+Riverview Est Rd (Near Footbridge),280
+Southbury Road (Summerstown Est),281
+Summerstown Rd (Summerstown Stores),282
+Glasheen Road (Opp Service Station),283
+Glasheen Road (Opp Flannery's Pub),284
+Glasheen Road (Opposite Tara Lawn),285
+Glasheen Road (The Orchards),286
+Glasheen Road (Dorgans Road Junction),287
+Bandon Road (Deasy Mini Market),288
+Douglas Village East ( Service Station),289
+Maryborough Woods (Opp Welwyn Rd),290
+Maryborough Woods (Southhills),291
+Clarkes Hill (The Borough Southbound),292
+Clarkes Hill (Landsborough Southbound),293
+Clarkes Hill (Foxwood Southbound),294
+Garryduff (Opp Sports Ground),295
+Rochestown Rd (Coach Hill House),296
+Rochestown Rd (Clarkes Hill Jctn),297
+Jacobs Island (The Sanctuary),298
+Jacobs Island (Sanctuary Rd Inbound),299
+Mahon Point Rd (Johnson & Perrott),300
+Mahon Point Rd (Opp City Gate),301
+Mahon Point Rd (Opp CSO Office),302
+Skehard Road (Service Station),303
+Skehard Road (Clover Lawn),304
+Skehard Road (Old Cliffe),305
+Skehard Rd (Park Hill Jctn),306
+Churchyard Lane (Silver Key Bar),307
+Ballinlough Road (Carrigmore Park),308
+Ballinlough Road (Opp Shrewsbury Estate),309
+Ballinlough Road (Sundrive Park),310
+Ballinlough Road (Opp Community Centre),311
+Ballinlough Road (Pic Du Jer Park),312
+Ballinlough Road (Opp Our Lady Church),313
+Ballinlough Road (Knockrea),314
+Red Forge Road (Sunbeam),315
+Mallow Road (Planet Complex),316
+New Commons Road (Onslow Gardens Jctn),317
+North Point (Opp Business Park),318
+Sunset Place (Ring House),319
+Kileens (Opposite Overpass),320
+Blarney (Filling Station),321
+Blarney Village (Woolen Mills),322
+Blarney (St Anne's Road),323
+St. Annes Road (Pauls Cross),324
+St. Annes Hill (Willison Park),325
+St. Annes Hill (Riverview Estate),326
+St. Annes Hill (Matanatha B&B),327
+St. Annes Hill (Primrose Hill),328
+Tower Village (Service Station),329
+Tower Village (Tower Hall),330
+Cloghroe (Fairways Terminus),331
+Tower (Model Village),332
+Tower Village (Shournagh Valley),333
+St. Annes Hill (Opp Primrose Hill),334
+St. Annes Hill (Opp Riverview),335
+St. Annes Rd (Opp Willison Park),336
+St. Annes Rd (Opp Glenmaroon Hse),337
+St. Annes Rd (Blarney School),338
+Blarney Village (Church),339
+Blarney (Station Cross),340
+Kileens Village,341
+Sunset Place (Hillside),342
+North Point (Underpass),343
+New Commons Road (North),344
+New Commons Road (Commons Hotel),345
+Mallow Road (Opp Marriot & Planet),346
+Mallow Road (Opp Sunbeam),347
+St. Patrick Street (Brown Thomas A),348
+Ballinlough Road (Opp Knockrea Lawn),349
+Ballinlough Road (Our Lady Church),350
+Ballinlough Road (Community Centre),351
+Ballinlough Road (Opp Sundrive Park),352
+Ballinlough Road (Shrewsbury Estate),353
+Ballinlough Road (Opp Carrigmore Park),354
+Churchyard Lane (Silverdale),355
+Skehard Road (Opposite Park Hill),356
+Skehard Road (Ashleigh Rise),357
+Skehard Road (Opp Clover Lawn),358
+Skehard Road ( Clontarf Estate),359
+Skehard Road (Opp Service Station),360
+Mahon Point Rd (CSO Office),361
+Mahon Point Rd (City Gate),362
+Mahon Point Rd (Mahon Point Centre),363
+Jacobs Island (Sanctuary Rd Outbound),364
+Cloghroe (Coolflugh Terminus),365
+South Douglas Road (Skabeg),366
+South Douglas Road (Opp Heatherton),367
+South Douglas Road (Loreto Park),368
+South Douglas Road (Rathmore Lawn),369
+Rochestown Road (Opposite Woodley),370
+Rochestown Rd (Opp Maryborough Estate),371
+Rochestown Road (Wandesford),372
+Rochestown Road (Newlyn Vale),373
+Rochestown Rd (Riverside),374
+Rochestown Rd (Hair Clinic),375
+Rochestown Rd (Opp Coach Hill Hse),376
+Rochestown Rd (Esso Garage),377
+Rochestown (Opp Rochestown Inn),378
+Rochestown (St Gerards Terrace),379
+Rochestown Rd (Hop Island),380
+Rochestown Rd (Harbour Hghts Eurospar),381
+Rockenham (Eastbound),382
+Rochestown Rd (Passage School),383
+Passage (Cork St Op Toureen Tce),384
+Passage (Main St Playground),385
+Passage (Main St Victoria Dock),386
+Maulbawn (St Peters School),387
+Glenbrook (Opp Lucia Tce),388
+Glenbrook (Wharf),389
+Carrigmahon (The Lodge Urban Villas),390
+Rochestown College,391
+Rochestown Rd (Carrigmahon Hill Jct),392
+Glenbrook (River Ferry Service),393
+Monkstown (Opp The Bosun),394
+Carrigmahon,395
+Monkstown (Yacht Club),396
+Rafeen (Eastbound),397
+Shanbally (Opp Church),398
+Shanbally (Grotto Eastbound),399
+Coolmore (Eastbound),400
+Barnahely (Novartis Eastbound),401
+Barnahealy (Janssen Biologics),402
+Ringaskiddy (Village Centre Eastbound),403
+Ringaskiddy (Main St Ferryport Entrance),404
+Ringaskiddy (Loughbeg DePuy Synthes),405
+Haulbowline (NMCI),406
+Haulbowline (Naval Base),407
+Haulbowline (Opp NMCI),408
+Ringaskiddy (Ferryboat Inn),409
+Ringaskiddy (Opp Deep Water Berth),410
+Barnahely (Opp Janssen Biologics),411
+Barnahely (Opp Novartis Westbound),412
+Coolmore (Westbound),413
+Shanbally Grotto (Westbound),414
+Shanbally (Church),415
+Rafeen (Westbound),416
+Monkstown (Opp Yacht Club),417
+Monkstown (The Ensign),418
+Glenbrook (Opp Cross River Ferry),419
+Glenbrook (Opp Wharf),420
+Glenbrook (Lucia Tce),421
+Passage (Barrys Pub),422
+Passage (Convent),423
+Passage (Toureen Tce),424
+Rockenham (Opp School),425
+Rockenham (Pembroke Wood),426
+Rochestown Rd (Opp Hop Island),427
+Rochestown (Opp St Gerard Tce),428
+Rochestown (Rochestown Inn),429
+Rochestown (Opp Esso Garage),430
+Rochestown Rd (Opp Rochestown Rise),431
+Rochestown Rd (Newenham Drive),432
+Rochestown Rd (Woodley & Foxgrove),433
+Cork (Bus Station - Parnell Place),434
+Lwr Glanmire Rd (Grattan Hill Junction),435
+Lwr Glanmire Rd (Murphy's Garage),436
+Lwr Glanmire Rd (Railway Bridge),437
+Lwr Glanmire Rd (Beales Hill),438
+Lwr Glanmire Rd (Bellevue Footbridge),439
+Lwr Glanmire Rd (Opp Port Park Gates),440
+Lwr Glanmire Rd (Lovers Walk),441
+Lwr Glanmire Rd (Belvedere Lodge),442
+Lwr Glanmire Rd (Chesire Home Lotaville),443
+Glanmire (O Cearnaigh Public House ),444
+Glanmire (Opp Monkey Maze),445
+Hazelwood (Opp Shopping Centre),446
+Hazelwood (Oakfield),447
+Hazelwood (Opp Community School),448
+Marwood Drive (Marwood Close),449
+Glyntown Rd (Ardcarrig),450
+Blossomgrove (Northbound),451
+Knockraha (Church),452
+Knockraha (The Old Schoolhouse),453
+Blossomgrove (Southbound),454
+Glyntown Rd (Chestnut Meadows),455
+Glyntown (Glyntown Heights),456
+Brooklodge Grove (Opp Ashington),457
+Hazelwood (Community School),458
+Hazelwood (Shopping Centre),459
+Hazelwood (Bank of Ireland),460
+Glanmire (Hump Back Bridge Jctn),461
+Glanmire (Opp Stone Arch),462
+Lwr Glanmire Rd (Opp Belvedere Lodge),463
+Lwr Glanmire Rd (Tivoli Opp Lovers Walk),464
+Lwr Glanmire Rd (Port Park Gates),465
+Lwr Glanmire Rd (Opp Beales Hill),466
+Lwr Glanmire Rd (Water Street Jctn),467
+Kent Station (Alfred Street),468
+Bull McCabe's Pub (Airport Road Cork),469
+Farmers Cross (Roundabout),470
+Cork Airport Business Park (Amazon),471
+Cork Airport,472
+Five Mile Bridge (southbound stop),473
+Ballinabearna Cross (southbound stop),474
+Riverstick (Opposite Church),475
+Belgooly (southbound stop),476
+Bridge View (southbound stop),477
+Kinsale (Town Car Park ),478
+Bridge View (northbound stop),479
+Belgooly (northbound stop),480
+Riverstick (Public House),481
+Ballinabearna Cross (northbound stop),482
+Five Mile Bridge (northbound stop),483
+Cork Airport B'ness Park (Opp Amazon),484
+Farmers Cross (Avenue 2000),485
+Cork Airport Road (Forge Hill Jctn),486
+South Mall (VHI House Stop B),487
+Donnybrook (Scairt Cross Terminus),488
+Donnybrook Hill (Hillcourt),489
+Donnybrook Hill (Opposite Maxol),490
+Donnybrook Hill (Grange Cross),491
+Douglas Village West (National School),492
+Church Street (Shopping Ctr South),493
+St. Patrick Street (Michel Jewellers),494
+Summerhill North (O'Donovan's Shop),495
+Summerhill North (Opp Cork Chamber),496
+Summerhill North (St. Luke's Cross),497
+Ballyhooley Road (Harrington Square),498
+Glen Avenue (Entrance to Mourne Ave),499
+Glen Avenue (Opp Comeragh Park),500
+Glen Avenue (Jnct with Rathmore Rd),501
+Glen Avenue (Mount Farran),502
+Ballyhooley Road (Glen River Park),503
+Ballyhooley Rd (After North Link Jctn),504
+Ballyhooley New Road (Ashgrove Villas),505
+Ballyhooley New Rd (Community Park),506
+Ballyhooley New Road (Brookwood),507
+Upper Kinvara Road,508
+Dublin Hill (Opp Kilbarry Ind Est),509
+Glenthorn Road (Northbound),510
+Glenthorn Drive (Northbound),511
+Glenthorn (Glenheights Square),512
+Glenheights Park Terminus,513
+North Ring Road (Opp Pynes Valley),514
+Ballyvolane Road (Clonard Estate),515
+Ballyvolane Road (Ashgrove Dunnes),516
+Ballyhooley Rd (Opposite Esso Garage),517
+Ballyhooley Road (Gordon's Hill),518
+Ballyhooley Road (Opp Kerrymans Pub),519
+Ballyhooley Road (Opp Windsor Terrace),520
+Ballyhooley Rd (St Lukes Post Office),521
+Summerhill North (Chamber of Comm),522
+Summerhill Nth (St. Patrick's Church),523
+Douglas (Church St Amenity Park),524
+Douglas Village West (Douglas Cycles),525
+Donnybrook Hill (Ballybrack Heights),526
+Donnybrook Hill (Maxol Service Stn),527
+Scairt Hill (James Connolly Place),528
+Ashmount (Turning Circle),529
+Ashmount (Opp Crescent),530
+Boherboy Rd (Opp Soccer Pitch),531
+Boherboy Rd (Opp Scoil Mhuire Banrion),532
+Boherboy Road (Lotabeg Estate),533
+North Ring Rd (Opp Shopping Centre),534
+Old Youghal Road (Cotton Ball Pub),535
+Old Youghal Road (Chinese Takeaway),536
+Old Youghal Road (Library),537
+Old Youghal Road (St. Joseph's Church),538
+St. Patrick Street Debenhams,539
+Western Road (UCC Castlewhite),540
+Wilton Road (Medical Centre),541
+Wilton Road (Rahan House),542
+Wilton Road (Credit Union),543
+Bishopstown Road (Wilton Centre),544
+Bishopstown Road (Opp Garda Station),545
+Curraheen Road (Opp TSB Bank),546
+Curraheen Road (The Outpost),547
+Curraheen Road (Opp Deanshall),548
+Curraheen Road (Opp Pharmacy),549
+Curaheen Road (Uam Var),550
+Curraheen Road (Halldene Estate),551
+Curraheen Road (Opp Technology Park),552
+Curraheen Road (Marymount Hospice),553
+Curraheen Rd(Ballinaspig More Op Farm),554
+Curraheen Road (Beechlodge),555
+Curraheen Road (St. Joseph's Villas),556
+Curraheen Village,557
+St. Patrick Street (Savoy Complex),558
+Curraheen Road (University Tech Cen),559
+Curraheen Road (Curraheen Estate),560
+Curraheen Rd (Real Prescence Church),561
+Curraheen Road (Deanshall),562
+Curraheen Road (Westgate Rd Jctn),563
+Curraheen Road (Firgrove Gardens),564
+CUH (Bishopstown Rd),565
+Wilton Road (Opp Credit Union),566
+Wilton Road (Wilton Gardens Jctn),567
+Western Road (Opp U C C Gate),568
+Ballyhooley Road (Windsor Terrace),569
+Old Youghal Road (Dillons Cross),570
+Old Youghal Rd (Opp St. Joseph's),571
+Old Youghal Rd (Opp Service Station),572
+Iona Pk (Opp Mayfield Family Practice),573
+Colmcille Avenue (Opposite Iona Green),574
+Colmcille Ave (Opp Garda Station),575
+Boherboy Rd (Scoil Mhuire),576
+Boherboy Rd (Lotabeg Green),577
+Ashmount (Opp Junction),578
