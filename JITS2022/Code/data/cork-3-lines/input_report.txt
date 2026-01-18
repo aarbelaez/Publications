@@ -1,0 +1,72 @@
+Speed: 20
+Rest time: 0
+Distance traveled before resting: 20
+Number of lines: 3
+Number of buses: 16
+
+Speed: 20
+Rest time: 5
+Distance traveled before resting: 20
+Number of lines: 3
+Number of buses: 20
+
+Speed: 20
+Rest time: 10
+Distance traveled before resting: 20
+Number of lines: 3
+Number of buses: 22
+
+Speed: 20
+Rest time: 20
+Distance traveled before resting: 20
+Number of lines: 3
+Number of buses: 22
+
+Speed: 30
+Rest time: 0
+Distance traveled before resting: 20
+Number of lines: 3
+Number of buses: 16
+
+Speed: 30
+Rest time: 5
+Distance traveled before resting: 20
+Number of lines: 3
+Number of buses: 20
+
+Speed: 30
+Rest time: 10
+Distance traveled before resting: 20
+Number of lines: 3
+Number of buses: 22
+
+Speed: 30
+Rest time: 20
+Distance traveled before resting: 20
+Number of lines: 3
+Number of buses: 22
+
+Speed: 40
+Rest time: 0
+Distance traveled before resting: 20
+Number of lines: 3
+Number of buses: 16
+
+Speed: 40
+Rest time: 5
+Distance traveled before resting: 20
+Number of lines: 3
+Number of buses: 20
+
+Speed: 40
+Rest time: 10
+Distance traveled before resting: 20
+Number of lines: 3
+Number of buses: 22
+
+Speed: 40
+Rest time: 20
+Distance traveled before resting: 20
+Number of lines: 3
+Number of buses: 22
+

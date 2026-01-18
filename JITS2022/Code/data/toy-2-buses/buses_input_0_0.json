@@ -1,0 +1,85 @@
+[
+    {
+        "line": "0",
+        "buses": [
+            {
+                "bus": 0,
+                "path": [
+                    {
+                        "station_id": 0,
+                        "time": "00:00"
+                    },
+                    {
+                        "station_id": 1,
+                        "time": "00:05"
+                    },
+                    {
+                        "station_id": 2,
+                        "time": "00:13"
+                    },
+                    {
+                        "station_id": 3,
+                        "time": "00:15"
+                    },
+                    {
+                        "station_id": 4,
+                        "time": "00:16"
+                    },
+                    {
+                        "station_id": 5,
+                        "time": "00:19"
+                    },
+                    {
+                        "station_id": 6,
+                        "time": "00:30"
+                    },
+                    {
+                        "station_id": 7,
+                        "time": "00:31"
+                    },
+                    {
+                        "station_id": 11,
+                        "time": "00:32"
+                    }
+                ]
+            },
+            {
+                "bus": 1,
+                "path": [
+                    {
+                        "station_id": 8,
+                        "time": "00:00"
+                    },
+                    {
+                        "station_id": 9,
+                        "time": "00:02"
+                    },
+                    {
+                        "station_id": 6,
+                        "time": "00:05"
+                    },
+                    {
+                        "station_id": 10,
+                        "time": "00:12"
+                    },
+                    {
+                        "station_id": 8,
+                        "time": "00:24"
+                    },
+                    {
+                        "station_id": 9,
+                        "time": "00:27"
+                    },
+                    {
+                        "station_id": 6,
+                        "time": "00:30"
+                    },
+                    {
+                        "station_id": 10,
+                        "time": "00:39"
+                    }
+                ]
+            }
+        ]
+    }
+]
